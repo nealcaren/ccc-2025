@@ -90,13 +90,11 @@ The following table shows the number of anti-Trump protests by day:
 for _, row in daily_counts.iterrows():
     report += f"| {row['date']} | {row['count']} |\n"
 
-report += """
-## Conclusion
-
-Anti-Trump protests in early 2025 demonstrate continued political polarization following the 2024 election. These events were characterized by concerns about democratic institutions, women's rights, and other progressive causes.
-
-The geographic distribution shows concentration in traditionally Democratic-leaning states, particularly on the coasts. The temporal pattern reveals spikes around key political events and weekends when more people are available to participate.
-"""
+report += "## Conclusion\n\n"
+report += "Anti-Trump protests in early 2025 demonstrate continued political polarization following the 2024 election. "
+report += "These events were characterized by concerns about democratic institutions, women's rights, and other progressive causes.\n\n"
+report += "The geographic distribution shows concentration in traditionally Democratic-leaning states, particularly on the coasts. "
+report += "The temporal pattern reveals spikes around key political events and weekends when more people are available to participate.\n"
 
 # Save the report
 with open('reports/anti_trump_protests.md', 'w') as f:
