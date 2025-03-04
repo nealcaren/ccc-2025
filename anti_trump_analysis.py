@@ -63,8 +63,8 @@ claims = trump_df['claims_summary'].dropna().str.split(';').explode().str.strip(
 top_claims = claims.value_counts().head(10)
 
 report += "The most common claims and themes in anti-Trump protests were:\n\n"
-for claim, count in top_claims.items():
-    report += f"- {claim} ({count} mentions)\n"
+for claim_text, claim_count in top_claims.items():
+    report += f"- {claim_text} ({claim_count} mentions)\n"
 """
 
 report += """
