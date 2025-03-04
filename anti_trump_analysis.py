@@ -96,7 +96,6 @@ report += """
 Anti-Trump protests in early 2025 demonstrate continued political polarization following the 2024 election. These events were characterized by concerns about democratic institutions, women's rights, and other progressive causes.
 
 The geographic distribution shows concentration in traditionally Democratic-leaning states, particularly on the coasts. The temporal pattern reveals spikes around key political events and weekends when more people are available to participate.
-
 """
 
 # Save the report
