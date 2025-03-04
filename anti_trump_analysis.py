@@ -65,6 +65,7 @@ top_claims = claims.value_counts().head(10)
 report += "The most common claims and themes in anti-Trump protests were:\n\n"
 for claim, count in top_claims.items():
     report += f"- {claim} ({count} mentions)\n"
+"""
 
 report += """
 ## Geographic Distribution
