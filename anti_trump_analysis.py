@@ -56,16 +56,15 @@ This report analyzes protest events targeting former President Donald Trump duri
 - **Peak Day**: The highest number of anti-Trump protests ({daily_counts['count'].max()}) occurred on {daily_counts.loc[daily_counts['count'].idxmax(), 'date']}
 
 ## Common Claims and Themes
+"""
 
-```
 # Get the most common claims
 claims = trump_df['claims_summary'].dropna().str.split(';').explode().str.strip()
 top_claims = claims.value_counts().head(10)
 
-report += "The most common claims and themes in anti-Trump protests were:\n\n"
+report += "\nThe most common claims and themes in anti-Trump protests were:\n\n"
 for claim_text, claim_count in top_claims.items():
     report += f"- {claim_text} ({claim_count} mentions)\n"
-"""
 
 report += """
 ## Geographic Distribution
