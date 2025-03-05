@@ -14,8 +14,8 @@ def main():
         dataset_details = json.load(f)
 
     print("Loading CSV data...")
-    # Load the actual CSV data
-    df = pd.read_csv('ccc-phase3-public.csv')
+    # Load the actual CSV data with Latin encoding
+    df = pd.read_csv('ccc-phase3-public.csv', encoding='latin1')
     print(f"Loaded {len(df)} events from CSV")
 
     # 1. Generate events by day count
