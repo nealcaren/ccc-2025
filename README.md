@@ -8,24 +8,34 @@ This dashboard visualizes protest event data from the CCC Phase 3 dataset.
 
 2. Install required dependencies:
    ```
-   pip install pandas
+   uv pip install pandas
    ```
 
 3. Process the data:
    ```
-   python process_data.py
+   uv run process_data.py
    ```
    This will create JSON files in the `data` directory.
 
-4. Start the local development server:
-   ```
-   python server.py
-   ```
+4. Serve the dashboard:
+   You can use any static file server to serve the dashboard. Here are some options:
 
-5. Open your browser and navigate to:
-   ```
-   http://localhost:8000
-   ```
+   - Using Python's http.server (for quick testing):
+     ```
+     python -m http.server
+     ```
+
+   - Using Node.js serve (if you have Node.js installed):
+     ```
+     npx serve
+     ```
+
+   - Using Netlify CLI (if you plan to deploy to Netlify):
+     ```
+     npx netlify-cli dev
+     ```
+
+5. Open your browser and navigate to the local server URL (typically http://localhost:8000 or similar)
 
 ## Deployment
 
@@ -42,7 +52,6 @@ To deploy this dashboard to Netlify or Vercel:
 - `index.html`: Main dashboard HTML
 - `js/dashboard.js`: JavaScript code for the dashboard
 - `data/`: Directory containing generated JSON files
-- `server.py`: Simple HTTP server for local development
 
 ## Data Source
 

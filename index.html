@@ -32,6 +32,24 @@
             font-weight: bold;
             color: #007bff;
         }
+        .chart-container {
+            position: relative;
+            height: 400px;
+        }
+        .filter-controls {
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
     </style>
 </head>
 <body>
@@ -42,17 +60,46 @@
         </header>
 
         <div class="row mb-4" id="summary-stats">
-            <!-- Summary stats will be populated here -->
+            <div class="loading">Loading summary statistics...</div>
         </div>
 
         <div class="row mb-4">
-            <div class="col-12">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                         <h2>Events by Day</h2>
                     </div>
                     <div class="card-body">
-                        <canvas id="eventsChart"></canvas>
+                        <div class="chart-container">
+                            <canvas id="eventsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Events by Type</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="eventTypesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Events by State</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="statesChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,8 +108,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <h2>Events Table</h2>
+                        <div class="filter-controls">
+                            <input type="text" id="tableSearch" class="form-control" placeholder="Search events...">
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -79,9 +129,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Table data will be populated here -->
+                                    <tr>
+                                        <td colspan="7" class="text-center">Loading events data...</td>
+                                    </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <span id="tableInfo">Showing 0 of 0 events</span>
+                            </div>
+                            <div>
+                                <button id="prevPage" class="btn btn-sm btn-outline-primary">Previous</button>
+                                <span id="pageInfo" class="mx-2">Page 1</span>
+                                <button id="nextPage" class="btn btn-sm btn-outline-primary">Next</button>
+                            </div>
                         </div>
                     </div>
                 </div>
