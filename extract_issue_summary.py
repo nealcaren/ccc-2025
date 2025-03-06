@@ -106,14 +106,11 @@ def main():
             # Check which issues this claim is tagged with
             for tag_name in [col for col in claims_df.columns if col != 'claim']:
                 if row[tag_name] == 1:
-                    # Count how many claims have this tag
-                    tag_count = claims_df[claims_df[tag_name] == 1].shape[0]
-                    
                     # Add to detailed claims data
                     detailed_claims.append({
                         'Claim': claim,
                         'Issue': tag_name,
-                        'Issue Total Claims': tag_count
+                        'Claim Count': claims_df[claims_df['claim'] == claim].shape[0]
                     })
         
         # Convert to DataFrame
