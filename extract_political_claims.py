@@ -48,7 +48,8 @@ def main():
         'immigrant', 'refugee', 'asylum', 'ice', 'border', 'gun control', 'gun violence',
         'gun safety', 'palestine', 'palestinian', 'gaza', 'ceasefire', 'against genocide',
         'indigenous', 'native american', 'voting rights', 'gerrymandering', 'democracy',
-        'progressive', 'liberal', 'socialist', 'social justice', 'equity', 'equality'
+        'progressive', 'liberal', 'socialist', 'social justice', 'equity', 'equality',
+        'against capitalism', 'against pro-life', 'against deportations', 'against border security'
     ]
     
     # Define keywords for right-leaning claims
