@@ -20,6 +20,27 @@ def main():
     # Create a dictionary to store issue information
     issues_data = []
     
+    # Create a copy of the dataframe for tag processing
+    processed_df = df.copy()
+    
+    # Apply the same Trump tag filtering logic to the summary calculation
+    # First, identify events where Trump should be removed as a tag
+    for idx, event in processed_df.iterrows():
+        # Get all tags for this event
+        event_tags = []
+        for tag_col in tag_columns:
+            if event[tag_col] == 1:
+                event_tags.append(tag_col)
+        
+        # Special handling for Trump tag
+        if 'tag_trump' in event_tags:
+            target = str(event.get('target', '')).lower()
+            claim = str(event.get('claims_summary', '')).lower()
+            
+            # Only keep Trump tag if it's the ONLY tag AND Trump is specifically mentioned in target or claim
+            if len(event_tags) > 1 or ('trump' not in target and 'trump' not in claim):
+                processed_df.at[idx, 'tag_trump'] = 0
+    
     # Process each tag
     for tag_col in tag_columns:
         # Convert tag names to readable format
@@ -29,14 +50,14 @@ def main():
         if tag_name == 'Musk':
             tag_name = 'Musk/DOGE'
         
-        # Count events with this tag
-        event_count = df[tag_col].sum()
-        event_percentage = (event_count / len(df)) * 100
+        # Count events with this tag using the processed dataframe
+        event_count = processed_df[tag_col].sum()
+        event_percentage = (event_count / len(processed_df)) * 100
         
         # Calculate total participants for this tag
-        df['size_for_stats'] = df['size_mean'].fillna(11)
-        participant_count = df[df[tag_col] == 1]['size_for_stats'].sum()
-        total_participants = df['size_for_stats'].sum()
+        processed_df['size_for_stats'] = processed_df['size_mean'].fillna(11)
+        participant_count = processed_df[processed_df[tag_col] == 1]['size_for_stats'].sum()
+        total_participants = processed_df['size_for_stats'].sum()
         participant_percentage = (participant_count / total_participants) * 100
         
         # Get keywords used for this tag
