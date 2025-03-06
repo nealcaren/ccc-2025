@@ -43,52 +43,27 @@ async function loadSummaryStats() {
             </div>
         `;
 
-        // Add top claims and targets
-        if (stats.top_claims) {
-            const claimsHtml = `
-                <div class="col-md-6 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Top Claims</h3>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group">
-                                ${Object.entries(stats.top_claims).map(([claim, count]) => 
-                                    `<li class="list-group-item d-flex justify-content-between align-items-center">
-                                        ${truncateText(claim, 100)}
-                                        <span class="badge bg-primary rounded-pill">${count}</span>
-                                    </li>`
-                                ).join('')}
-                            </ul>
+        // Add Protest Issues section
+        const protestTagsHtml = `
+            <div class="col-md-12 mt-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Protest Issues</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="protestIssuesChart" style="height: 300px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            `;
-            statsContainer.innerHTML += claimsHtml;
-        }
-
-        if (stats.top_targets) {
-            const targetsHtml = `
-                <div class="col-md-6 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Top Targets</h3>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group">
-                                ${Object.entries(stats.top_targets).map(([target, count]) => 
-                                    `<li class="list-group-item d-flex justify-content-between align-items-center">
-                                        ${truncateText(target, 100)}
-                                        <span class="badge bg-primary rounded-pill">${count}</span>
-                                    </li>`
-                                ).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            `;
-            statsContainer.innerHTML += targetsHtml;
-        }
+            </div>
+        `;
+        statsContainer.innerHTML += protestTagsHtml;
+        
+        // Load the protest issues chart
+        loadProtestIssuesChart();
     } catch (error) {
         console.error('Error loading summary stats:', error);
         document.getElementById('summary-stats').innerHTML = `
@@ -556,6 +531,81 @@ async function loadProtestTagsChart() {
         });
     } catch (error) {
         console.error('Error loading protest tags chart:', error);
+    }
+}
+
+// Load and display protest issues chart in the summary section
+async function loadProtestIssuesChart() {
+    try {
+        const tagsData = await fetchData('data/protest_tags.json');
+        
+        // Create chart
+        const ctx = document.getElementById('protestIssuesChart');
+        if (!ctx) return; // Exit if element doesn't exist yet
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: tagsData.tags,
+                datasets: [{
+                    label: 'Percentage of Events',
+                    data: tagsData.percentages,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)',
+                        'rgba(199, 199, 199, 0.7)',
+                        'rgba(83, 102, 255, 0.7)',
+                        'rgba(40, 159, 64, 0.7)',
+                        'rgba(210, 199, 199, 0.7)',
+                        'rgba(255, 99, 132, 0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.raw.toFixed(2) + '%';
+                                const count = tagsData.counts[context.dataIndex];
+                                return `${label}: ${value} (${count} events)`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage of Events'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Issue'
+                        }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error loading protest issues chart:', error);
     }
 }
 
