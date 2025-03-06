@@ -64,8 +64,10 @@ async function loadSummaryStats() {
         `;
         statsContainer.innerHTML += protestTagsHtml;
         
-        // Load the protest issues chart
-        loadProtestIssuesChart();
+        // Load the protest issues chart after a short delay to ensure the DOM is updated
+        setTimeout(() => {
+            loadProtestIssuesChart();
+        }, 100);
     } catch (error) {
         console.error('Error loading summary stats:', error);
         document.getElementById('summary-stats').innerHTML = `
