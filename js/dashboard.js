@@ -47,8 +47,12 @@ async function loadSummaryStats() {
         const protestTagsHtml = `
             <div class="col-md-12 mt-3">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <h3>Protest Issues</h3>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="protestIssuesViewSwitch">
+                            <label class="form-check-label" for="protestIssuesViewSwitch">View by participants</label>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -67,6 +71,20 @@ async function loadSummaryStats() {
         // Load the protest issues chart after a short delay to ensure the DOM is updated
         setTimeout(() => {
             loadProtestIssuesChart();
+            
+            // Add event listener to the second switch
+            const issuesViewSwitch = document.getElementById('protestIssuesViewSwitch');
+            if (issuesViewSwitch) {
+                issuesViewSwitch.addEventListener('change', function() {
+                    // Update the main switch to match
+                    const mainSwitch = document.getElementById('protestTagsViewSwitch');
+                    if (mainSwitch) {
+                        mainSwitch.checked = this.checked;
+                        // Trigger the change event on the main switch
+                        mainSwitch.dispatchEvent(new Event('change'));
+                    }
+                });
+            }
         }, 100);
     } catch (error) {
         console.error('Error loading summary stats:', error);
@@ -473,66 +491,93 @@ async function loadProtestTagsChart() {
         
         // Create chart
         const ctx = document.getElementById('protestTagsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: tagsData.tags,
-                datasets: [{
-                    label: 'Percentage of Events',
-                    data: tagsData.percentages,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
-                        'rgba(255, 206, 86, 0.7)',
-                        'rgba(75, 192, 192, 0.7)',
-                        'rgba(153, 102, 255, 0.7)',
-                        'rgba(255, 159, 64, 0.7)',
-                        'rgba(199, 199, 199, 0.7)',
-                        'rgba(83, 102, 255, 0.7)',
-                        'rgba(40, 159, 64, 0.7)',
-                        'rgba(210, 199, 199, 0.7)',
-                        'rgba(255, 99, 132, 0.7)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                const label = context.dataset.label || '';
-                                const value = context.raw.toFixed(2) + '%';
-                                const count = tagsData.counts[context.dataIndex];
-                                return `${label}: ${value} (${count} events)`;
-                            }
-                        }
-                    }
+        let protestTagsChart;
+        
+        // Function to create or update the chart
+        const updateChart = (byParticipants = false) => {
+            const data = byParticipants ? tagsData.percentagesByParticipants : tagsData.percentages;
+            const counts = byParticipants ? tagsData.participantCounts : tagsData.counts;
+            const label = byParticipants ? 'Percentage of Participants' : 'Percentage of Events';
+            const tooltipLabel = byParticipants ? 'participants' : 'events';
+            
+            // If chart exists, destroy it first
+            if (protestTagsChart) {
+                protestTagsChart.destroy();
+            }
+            
+            // Create new chart
+            protestTagsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: tagsData.tags,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(199, 199, 199, 0.7)',
+                            'rgba(83, 102, 255, 0.7)',
+                            'rgba(40, 159, 64, 0.7)',
+                            'rgba(210, 199, 199, 0.7)',
+                            'rgba(255, 99, 132, 0.7)'
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Percentage of Events'
-                        },
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.dataset.label || '';
+                                    const value = context.raw.toFixed(2) + '%';
+                                    const count = counts[context.dataIndex];
+                                    return `${label}: ${value} (${count} ${tooltipLabel})`;
+                                }
                             }
                         }
                     },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Tag'
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: label
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Tag'
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+        };
+        
+        // Initial chart creation
+        updateChart(false);
+        
+        // Add event listener to the switch
+        const viewSwitch = document.getElementById('protestTagsViewSwitch');
+        if (viewSwitch) {
+            viewSwitch.addEventListener('change', function() {
+                updateChart(this.checked);
+            });
+        }
     } catch (error) {
         console.error('Error loading protest tags chart:', error);
     }
@@ -552,68 +597,94 @@ async function loadProtestIssuesChart() {
         
         // Get the canvas context for 2d drawing
         const context = ctx.getContext('2d');
+        let protestIssuesChart;
         
-        new Chart(context, {
-            type: 'bar',
-            data: {
-                labels: tagsData.tags,
-                datasets: [{
-                    label: 'Percentage of Events',
-                    data: tagsData.percentages,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
-                        'rgba(255, 206, 86, 0.7)',
-                        'rgba(75, 192, 192, 0.7)',
-                        'rgba(153, 102, 255, 0.7)',
-                        'rgba(255, 159, 64, 0.7)',
-                        'rgba(199, 199, 199, 0.7)',
-                        'rgba(83, 102, 255, 0.7)',
-                        'rgba(40, 159, 64, 0.7)',
-                        'rgba(210, 199, 199, 0.7)',
-                        'rgba(255, 99, 132, 0.7)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                const label = context.dataset.label || '';
-                                const value = context.raw.toFixed(2) + '%';
-                                const count = tagsData.counts[context.dataIndex];
-                                return `${label}: ${value} (${count} events)`;
-                            }
-                        }
-                    }
+        // Function to create or update the chart
+        const updateChart = (byParticipants = false) => {
+            const data = byParticipants ? tagsData.percentagesByParticipants : tagsData.percentages;
+            const counts = byParticipants ? tagsData.participantCounts : tagsData.counts;
+            const label = byParticipants ? 'Percentage of Participants' : 'Percentage of Events';
+            const tooltipLabel = byParticipants ? 'participants' : 'events';
+            
+            // If chart exists, destroy it first
+            if (protestIssuesChart) {
+                protestIssuesChart.destroy();
+            }
+            
+            // Create new chart
+            protestIssuesChart = new Chart(context, {
+                type: 'bar',
+                data: {
+                    labels: tagsData.tags,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(199, 199, 199, 0.7)',
+                            'rgba(83, 102, 255, 0.7)',
+                            'rgba(40, 159, 64, 0.7)',
+                            'rgba(210, 199, 199, 0.7)',
+                            'rgba(255, 99, 132, 0.7)'
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Percentage of Events'
-                        },
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.dataset.label || '';
+                                    const value = context.raw.toFixed(2) + '%';
+                                    const count = counts[context.dataIndex];
+                                    return `${label}: ${value} (${count} ${tooltipLabel})`;
+                                }
                             }
                         }
                     },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Issue'
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: label
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Issue'
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+        };
+        
+        // Initial chart creation
+        updateChart(false);
+        
+        // Add event listener to the switch in the main section to also update this chart
+        const viewSwitch = document.getElementById('protestTagsViewSwitch');
+        if (viewSwitch) {
+            viewSwitch.addEventListener('change', function() {
+                updateChart(this.checked);
+            });
+        }
     } catch (error) {
         console.error('Error loading protest issues chart:', error);
     }

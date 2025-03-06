@@ -78,14 +78,30 @@ def main():
                 axis=1
             )
 
-    # Calculate tag statistics - count events, not claims
+    # Calculate tag statistics - count events and participants
     tag_stats = {}
+    
+    # Fill missing size values with 11 (default size)
+    df['size_for_stats'] = df['size_mean'].fillna(11)
+    total_participants = df['size_for_stats'].sum()
+    
     for tag in tag_categories.keys():
         tag_col = f'tag_{tag.lower().replace("+", "plus").replace(" ", "_")}'
+        
         # Count unique events with this tag
         count = df[tag_col].sum()
         percentage = (count / len(df)) * 100
-        tag_stats[tag] = {'count': int(count), 'percentage': float(percentage)}
+        
+        # Count participants in events with this tag
+        participant_count = df[df[tag_col] == 1]['size_for_stats'].sum()
+        percentage_by_participants = (participant_count / total_participants) * 100
+        
+        tag_stats[tag] = {
+            'count': int(count), 
+            'percentage': float(percentage),
+            'participant_count': int(participant_count),
+            'percentage_by_participants': float(percentage_by_participants)
+        }
 
     # Sort tags by count
     sorted_tags = sorted(tag_stats.items(), key=lambda x: x[1]['count'], reverse=True)
@@ -96,7 +112,9 @@ def main():
         json.dump({
             'tags': [tag for tag, _ in sorted_tags],
             'counts': [stats['count'] for _, stats in sorted_tags],
-            'percentages': [stats['percentage'] for _, stats in sorted_tags]
+            'percentages': [stats['percentage'] for _, stats in sorted_tags],
+            'participantCounts': [stats['participant_count'] for _, stats in sorted_tags],
+            'percentagesByParticipants': [stats['percentage_by_participants'] for _, stats in sorted_tags]
         }, f)
     
     # Save tagged data back to CSV
