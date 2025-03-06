@@ -157,12 +157,11 @@ def main():
             
             # Special handling for Trump tag
             if 'Trump' in event_tags:
-                # Check if Trump is the only tag or if Trump is specifically mentioned in claim or target
                 target = str(event.get('target', '')).lower()
                 claim_lower = str(claim).lower()
                 
-                # If there are other tags and Trump isn't specifically the target or in claim, remove Trump tag
-                if len(event_tags) > 1 and 'trump' not in target.lower() and 'trump' not in claim_lower:
+                # Only keep Trump tag if it's the ONLY tag AND Trump is specifically mentioned in target or claim
+                if len(event_tags) > 1 or ('trump' not in target and 'trump' not in claim_lower):
                     event_tags.remove('Trump')
             
             # Add all remaining tags to this claim
