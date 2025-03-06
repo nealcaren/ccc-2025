@@ -365,6 +365,58 @@ function displayEventsPage() {
     document.getElementById('nextPage').disabled = currentPage >= totalPages;
 }
 
+// Load and display tactics chart
+async function loadTacticsChart() {
+    try {
+        const tacticsData = await fetchData('data/tactics.json');
+        
+        // Sort by count and take top 15
+        const sortedTactics = Object.entries(tacticsData)
+            .sort((a, b) => b[1] - a[1]);
+        
+        const labels = sortedTactics.map(item => item[0]);
+        const data = sortedTactics.map(item => item[1]);
+        
+        // Create chart
+        const ctx = document.getElementById('tacticsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Frequency',
+                    data: data,
+                    backgroundColor: 'rgba(153, 102, 255, 0.7)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Events'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Tactic'
+                        }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error loading tactics chart:', error);
+    }
+}
+
 // Initialize the dashboard
 async function initDashboard() {
     try {
@@ -373,6 +425,7 @@ async function initDashboard() {
             loadEventsChart(),
             loadEventTypesChart(),
             loadStatesChart(),
+            loadTacticsChart(),
             loadEventsTable()
         ]);
     } catch (error) {

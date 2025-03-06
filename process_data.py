@@ -64,6 +64,13 @@ def main():
     state_data = df['state'].value_counts().to_dict()
     with open('data/states.json', 'w') as f:
         json.dump(state_data, f)
+    
+    # 6. Generate tactics breakdown
+    if 'participant_measures' in df.columns:
+        tactics_data = df['participant_measures'].value_counts().head(20).to_dict()
+        with open('data/tactics.json', 'w') as f:
+            json.dump(tactics_data, f)
+        print(f"Saved top {len(tactics_data)} tactics")
 
     print("Data processing complete. JSON files generated in the 'data' directory.")
 
