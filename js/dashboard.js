@@ -500,6 +500,34 @@ async function loadProtestTagsChart() {
             const label = byParticipants ? 'Percentage of Participants' : 'Percentage of Events';
             const tooltipLabel = byParticipants ? 'participants' : 'events';
             
+            // Create arrays for sorting while preserving color mapping
+            const sortedIndices = Array.from(Array(tagsData.tags.length).keys())
+                .sort((a, b) => (byParticipants ? 
+                    tagsData.percentagesByParticipants[b] - tagsData.percentagesByParticipants[a] : 
+                    tagsData.percentages[b] - tagsData.percentages[a]));
+            
+            const sortedLabels = sortedIndices.map(i => tagsData.tags[i]);
+            const sortedData = sortedIndices.map(i => data[i]);
+            const sortedCounts = sortedIndices.map(i => counts[i]);
+            
+            // Original color array to maintain consistent colors
+            const colorArray = [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(199, 199, 199, 0.7)',
+                'rgba(83, 102, 255, 0.7)',
+                'rgba(40, 159, 64, 0.7)',
+                'rgba(210, 199, 199, 0.7)',
+                'rgba(255, 99, 132, 0.7)'
+            ];
+            
+            // Map the original colors to the sorted indices
+            const sortedColors = sortedIndices.map(i => colorArray[i % colorArray.length]);
+            
             // If chart exists, destroy it first
             if (protestTagsChart) {
                 protestTagsChart.destroy();
@@ -509,23 +537,11 @@ async function loadProtestTagsChart() {
             protestTagsChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: tagsData.tags,
+                    labels: sortedLabels,
                     datasets: [{
                         label: label,
-                        data: data,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.7)',
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255, 206, 86, 0.7)',
-                            'rgba(75, 192, 192, 0.7)',
-                            'rgba(153, 102, 255, 0.7)',
-                            'rgba(255, 159, 64, 0.7)',
-                            'rgba(199, 199, 199, 0.7)',
-                            'rgba(83, 102, 255, 0.7)',
-                            'rgba(40, 159, 64, 0.7)',
-                            'rgba(210, 199, 199, 0.7)',
-                            'rgba(255, 99, 132, 0.7)'
-                        ],
+                        data: sortedData,
+                        backgroundColor: sortedColors,
                         borderWidth: 1
                     }]
                 },
@@ -538,7 +554,7 @@ async function loadProtestTagsChart() {
                                 label: function(context) {
                                     const label = context.dataset.label || '';
                                     const value = context.raw.toFixed(2) + '%';
-                                    const count = counts[context.dataIndex];
+                                    const count = sortedCounts[context.dataIndex];
                                     return `${label}: ${value} (${count} ${tooltipLabel})`;
                                 }
                             }
@@ -606,6 +622,34 @@ async function loadProtestIssuesChart() {
             const label = byParticipants ? 'Percentage of Participants' : 'Percentage of Events';
             const tooltipLabel = byParticipants ? 'participants' : 'events';
             
+            // Create arrays for sorting while preserving color mapping
+            const sortedIndices = Array.from(Array(tagsData.tags.length).keys())
+                .sort((a, b) => (byParticipants ? 
+                    tagsData.percentagesByParticipants[b] - tagsData.percentagesByParticipants[a] : 
+                    tagsData.percentages[b] - tagsData.percentages[a]));
+            
+            const sortedLabels = sortedIndices.map(i => tagsData.tags[i]);
+            const sortedData = sortedIndices.map(i => data[i]);
+            const sortedCounts = sortedIndices.map(i => counts[i]);
+            
+            // Original color array to maintain consistent colors
+            const colorArray = [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(199, 199, 199, 0.7)',
+                'rgba(83, 102, 255, 0.7)',
+                'rgba(40, 159, 64, 0.7)',
+                'rgba(210, 199, 199, 0.7)',
+                'rgba(255, 99, 132, 0.7)'
+            ];
+            
+            // Map the original colors to the sorted indices
+            const sortedColors = sortedIndices.map(i => colorArray[i % colorArray.length]);
+            
             // If chart exists, destroy it first
             if (protestIssuesChart) {
                 protestIssuesChart.destroy();
@@ -615,23 +659,11 @@ async function loadProtestIssuesChart() {
             protestIssuesChart = new Chart(context, {
                 type: 'bar',
                 data: {
-                    labels: tagsData.tags,
+                    labels: sortedLabels,
                     datasets: [{
                         label: label,
-                        data: data,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.7)',
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255, 206, 86, 0.7)',
-                            'rgba(75, 192, 192, 0.7)',
-                            'rgba(153, 102, 255, 0.7)',
-                            'rgba(255, 159, 64, 0.7)',
-                            'rgba(199, 199, 199, 0.7)',
-                            'rgba(83, 102, 255, 0.7)',
-                            'rgba(40, 159, 64, 0.7)',
-                            'rgba(210, 199, 199, 0.7)',
-                            'rgba(255, 99, 132, 0.7)'
-                        ],
+                        data: sortedData,
+                        backgroundColor: sortedColors,
                         borderWidth: 1
                     }]
                 },
@@ -645,7 +677,7 @@ async function loadProtestIssuesChart() {
                                 label: function(context) {
                                     const label = context.dataset.label || '';
                                     const value = context.raw.toFixed(2) + '%';
-                                    const count = counts[context.dataIndex];
+                                    const count = sortedCounts[context.dataIndex];
                                     return `${label}: ${value} (${count} ${tooltipLabel})`;
                                 }
                             }
