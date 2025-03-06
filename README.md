@@ -85,3 +85,19 @@ The data comes from the CCC Phase 3 public dataset, which contains information a
 - Analysis of protest issues, tactics, and geographic distribution
 - Timeline of protest activity
 - Detailed event information
+- Toggle between viewing protest issues by event count or participant count
+- Comprehensive tagging system for categorizing protests by issue
+
+## Issue Categories
+The dashboard categorizes protests into the following issue categories:
+- Gaza/Palestine
+- Trump
+- Immigration
+- Environment
+- Workers' Rights
+- LGBT+ Rights
+- Abortion/Reproductive Rights
+- Gun Control
+- Racial Justice
+- Musk
+- Healthcare

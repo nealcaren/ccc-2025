@@ -48,9 +48,15 @@ def main():
             # Check for ICE with proper capitalization to avoid matching words ending in 'ice'
             if ' ICE ' in claim_text or 'ICE,' in claim_text or 'ICE.' in claim_text or 'ICE:' in claim_text:
                 return 1
-            
+        
             # Check for other immigration-related keywords
             immigration_keywords = ['immigration', 'immigrant', 'border', 'migrant', 'refugee', 'asylum', 'deportation']
+        
+            # Exclude specific phrases that should not be tagged as immigration
+            exclude_phrases = ['abolishing police', 'against racism']
+            if any(phrase in claim_lower for phrase in exclude_phrases):
+                return 0
+            
             return 1 if any(keyword.lower() in claim_lower for keyword in immigration_keywords) else 0
         
         # Standard keyword check for other tags
