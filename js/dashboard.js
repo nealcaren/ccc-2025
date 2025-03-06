@@ -159,60 +159,6 @@ async function loadEventsChart() {
     }
 }
 
-// Load and display event types chart
-async function loadEventTypesChart() {
-    try {
-        const eventTypes = await fetchData('data/event_types.json');
-        
-        // Sort by count and take top 10
-        const sortedTypes = Object.entries(eventTypes)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 10);
-        
-        const labels = sortedTypes.map(item => item[0]);
-        const data = sortedTypes.map(item => item[1]);
-        
-        // Create chart
-        const ctx = document.getElementById('eventTypesChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: labels,
-                datasets: [{
-                    data: data,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
-                        'rgba(255, 206, 86, 0.7)',
-                        'rgba(75, 192, 192, 0.7)',
-                        'rgba(153, 102, 255, 0.7)',
-                        'rgba(255, 159, 64, 0.7)',
-                        'rgba(199, 199, 199, 0.7)',
-                        'rgba(83, 102, 255, 0.7)',
-                        'rgba(40, 159, 64, 0.7)',
-                        'rgba(210, 199, 199, 0.7)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'right',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Event Types Distribution'
-                    }
-                }
-            }
-        });
-    } catch (error) {
-        console.error('Error loading event types chart:', error);
-    }
-}
 
 // Load and display states chart
 async function loadStatesChart() {
@@ -365,57 +311,6 @@ function displayEventsPage() {
     document.getElementById('nextPage').disabled = currentPage >= totalPages;
 }
 
-// Load and display tactics chart
-async function loadTacticsChart() {
-    try {
-        const tacticsData = await fetchData('data/tactics.json');
-        
-        // Sort by count and take top 15
-        const sortedTactics = Object.entries(tacticsData)
-            .sort((a, b) => b[1] - a[1]);
-        
-        const labels = sortedTactics.map(item => item[0]);
-        const data = sortedTactics.map(item => item[1]);
-        
-        // Create chart
-        const ctx = document.getElementById('tacticsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Frequency',
-                    data: data,
-                    backgroundColor: 'rgba(153, 102, 255, 0.7)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                indexAxis: 'y',
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Number of Events'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Tactic'
-                        }
-                    }
-                }
-            }
-        });
-    } catch (error) {
-        console.error('Error loading tactics chart:', error);
-    }
-}
 
 // Load and display tactics analysis chart
 async function loadTacticsAnalysisChart() {
@@ -498,9 +393,7 @@ async function initDashboard() {
         await Promise.all([
             loadSummaryStats(),
             loadEventsChart(),
-            loadEventTypesChart(),
             loadStatesChart(),
-            loadTacticsChart(),
             loadTacticsAnalysisChart(),
             loadEventsTable()
         ]);
