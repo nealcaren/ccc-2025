@@ -158,6 +158,7 @@ async function loadEventsChart() {
 async function loadStatesChart() {
     try {
         const statesData = await fetchData('data/states.json');
+        const statesSizeData = await fetchData('data/states_size.json');
         
         // Sort by count and take top 15
         const sortedStates = Object.entries(statesData)
@@ -165,7 +166,12 @@ async function loadStatesChart() {
             .slice(0, 15);
         
         const labels = sortedStates.map(item => item[0]);
-        const data = sortedStates.map(item => item[1]);
+        const eventCounts = sortedStates.map(item => item[1]);
+        
+        // Get average sizes for the top 15 states by event count
+        const avgSizes = labels.map(state => 
+            statesSizeData[state] ? Math.round(statesSizeData[state]) : 0
+        );
         
         // Create chart
         const ctx = document.getElementById('statesChart').getContext('2d');
@@ -173,13 +179,25 @@ async function loadStatesChart() {
             type: 'bar',
             data: {
                 labels: labels,
-                datasets: [{
-                    label: 'Events by State',
-                    data: data,
-                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
+                datasets: [
+                    {
+                        label: 'Events by State',
+                        data: eventCounts,
+                        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Average Protest Size',
+                        data: avgSizes,
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1,
+                        type: 'line',
+                        yAxisID: 'y1'
+                    }
+                ]
             },
             options: {
                 responsive: true,
@@ -187,9 +205,21 @@ async function loadStatesChart() {
                 scales: {
                     y: {
                         beginAtZero: true,
+                        position: 'left',
                         title: {
                             display: true,
                             text: 'Number of Events'
+                        }
+                    },
+                    y1: {
+                        beginAtZero: true,
+                        position: 'right',
+                        grid: {
+                            drawOnChartArea: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Average Protest Size'
                         }
                     },
                     x: {
@@ -381,12 +411,89 @@ async function loadTacticsAnalysisChart() {
     }
 }
 
+// Load and display protest size over time chart
+async function loadSizeTimeChart() {
+    try {
+        const events = await fetchData('data/events_table.json');
+        
+        // Group events by date and calculate average size
+        const sizeByDate = {};
+        const countByDate = {};
+        
+        events.forEach(event => {
+            if (!sizeByDate[event.date]) {
+                sizeByDate[event.date] = 0;
+                countByDate[event.date] = 0;
+            }
+            
+            // Use size_mean if available, otherwise use 11
+            const size = event.size_mean !== 'Unknown' ? parseFloat(event.size_mean) : 11;
+            sizeByDate[event.date] += size;
+            countByDate[event.date]++;
+        });
+        
+        // Calculate average size for each date
+        const avgSizeByDate = {};
+        Object.keys(sizeByDate).forEach(date => {
+            avgSizeByDate[date] = sizeByDate[date] / countByDate[date];
+        });
+        
+        // Sort dates
+        const dates = Object.keys(avgSizeByDate).sort();
+        const avgSizes = dates.map(date => avgSizeByDate[date]);
+        
+        // Create chart
+        const ctx = document.getElementById('sizeTimeChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: 'Average Protest Size',
+                    data: avgSizes,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    tension: 0.2,
+                    pointRadius: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Average Size'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        },
+                        ticks: {
+                            maxRotation: 90,
+                            minRotation: 45
+                        }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error loading size time chart:', error);
+    }
+}
+
 // Initialize the dashboard
 async function initDashboard() {
     try {
         await Promise.all([
             loadSummaryStats(),
             loadEventsChart(),
+            loadSizeTimeChart(),
             loadStatesChart(),
             loadTacticsAnalysisChart(),
             loadEventsTable()

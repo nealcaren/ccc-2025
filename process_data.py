@@ -69,6 +69,14 @@ def main():
     with open('data/states.json', 'w') as f:
         json.dump(state_data, f)
     
+    # 5b. Generate state size averages
+    # Fill missing size values with 11
+    df['size_for_avg'] = df['size_mean'].fillna(11)
+    # Group by state and calculate average size
+    state_size_data = df.groupby('state')['size_for_avg'].mean().to_dict()
+    with open('data/states_size.json', 'w') as f:
+        json.dump(state_size_data, f)
+    
     # 6. Generate tactics breakdown (old)
     if 'participant_measures' in df.columns:
         tactics_data = df['participant_measures'].value_counts().head(20).to_dict()
