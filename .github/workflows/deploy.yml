@@ -5,6 +5,9 @@ on:
     branches:
       - master  # Your default branch is 'master', not 'main'
 
+permissions:
+  contents: write  # This gives the GITHUB_TOKEN write access to repository contents
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
