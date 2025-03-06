@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for proper deployment
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -35,4 +37,7 @@ jobs:
         with:
           folder: .  # The folder containing your site files
           branch: gh-pages  # The branch to deploy to
-          token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's automatically provided token
+          clean: true  # Automatically remove deleted files from the deploy branch
+          clean-exclude: |
+            .nojekyll
+          single-commit: true  # Only keep the latest commit on the gh-pages branch
