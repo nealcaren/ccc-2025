@@ -106,13 +106,17 @@ def main():
         for _, row in claims_df.iterrows():
             claim = row['claim']
             
+            # Skip NaN claims
+            if pd.isna(claim):
+                continue
+                
             # Check which issues this claim is tagged with
             for tag_name in [col for col in claims_df.columns if col != 'claim']:
                 if row[tag_name] == 1:
                     # Add to detailed claims data
                     detailed_claims.append({
                         'Claim': claim,
-                        'Claim Count': claim_counts[claim],
+                        'Claim Count': claim_counts.get(claim, 0),  # Use get with default value to handle any missing keys
                         'Issue': tag_name
                     })
         
