@@ -52,8 +52,10 @@ def main():
     # Filter for left-leaning claims or targeting Trump/Musk
     print("Filtering for left-leaning protests...")
     left_protests = df[
-        df['claims_summary'].apply(is_left_leaning) | 
-        df['targets'].apply(targets_trump_or_musk)
+        (df['claims_summary'].apply(is_left_leaning) | 
+         df['targets'].apply(targets_trump_or_musk)) &
+        (df['date'] >= '2025-01-15') &
+        (df['date'] <= '2025-02-28')
     ]
     
     print(f"Found {len(left_protests)} left-leaning protests out of {len(df)} total")
