@@ -50,7 +50,6 @@ def main():
     # Calculate percentages
     total_events = len(df)
     tactics_percentages = {
-        'Demonstration': (df['tactic_demonstration'].sum() / total_events) * 100,
         'March': (df['tactic_march'].sum() / total_events) * 100,
         'Counter-Protest': (df['tactic_counter_protest'].sum() / total_events) * 100,
         'Civil Disobedience': (df['tactic_civil_disobedience'].sum() / total_events) * 100,
@@ -83,7 +82,6 @@ def main():
         'labels': list(tactics_percentages.keys()),
         'percentages': list(tactics_percentages.values()),
         'counts': [
-            int(df['tactic_demonstration'].sum()),
             int(df['tactic_march'].sum()),
             int(df['tactic_counter_protest'].sum()),
             int(df['tactic_civil_disobedience'].sum()),
