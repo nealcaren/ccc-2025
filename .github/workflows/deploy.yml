@@ -32,3 +32,4 @@ jobs:
         with:
           folder: .  # The folder containing your site files
           branch: gh-pages  # The branch to deploy to
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's automatically provided token
