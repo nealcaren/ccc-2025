@@ -111,13 +111,18 @@ def main():
                 continue
                 
             # Check which issues this claim is tagged with
+            claim_issues = []
             for tag_name in [col for col in claims_df.columns if col != 'claim']:
                 if row[tag_name] == 1:
-                    # Add to detailed claims data
+                    claim_issues.append(tag_name)
+            
+            # Only add the claim with its actual tagged issues
+            if claim_issues:
+                for issue in claim_issues:
                     detailed_claims.append({
                         'Claim': claim,
-                        'Claim Count': claim_counts.get(claim, 0),  # Use get with default value to handle any missing keys
-                        'Issue': tag_name
+                        'Claim Count': claim_counts.get(claim, 0),
+                        'Issue': issue
                     })
         
         # Convert to DataFrame and remove duplicates
