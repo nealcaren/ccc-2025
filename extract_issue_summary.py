@@ -94,39 +94,45 @@ def main():
     # Load the claims with tags data
     claims_with_tags_file = 'data/claims_with_tags.csv'
     if Path(claims_with_tags_file).exists():
+        # Load the original events data to get the actual tag associations
+        events_df = df.copy()
+        
+        # Load the claims data
         claims_df = pd.read_csv(claims_with_tags_file)
         
-        # Create a dictionary to count claim occurrences
+        # Count unique claims
         claim_counts = claims_df['claim'].value_counts().to_dict()
         
-        # Group claims by their text to identify which tags actually apply to each unique claim
-        claim_to_tags = {}
+        # Create a mapping of claims to their actual issues
+        claim_to_issues = {}
         
-        # Process each claim and collect its tags
-        for _, row in claims_df.iterrows():
-            claim = row['claim']
+        # For each event in the original dataset
+        for _, event in events_df.iterrows():
+            claim = event['claims_summary']
             
-            # Skip NaN claims
+            # Skip events without claims
             if pd.isna(claim):
                 continue
-            
-            # Initialize the claim's tag set if not already present
-            if claim not in claim_to_tags:
-                claim_to_tags[claim] = set()
-            
-            # Add all tags that apply to this claim instance
-            for tag_name in [col for col in claims_df.columns if col != 'claim']:
-                if row[tag_name] == 1:
-                    claim_to_tags[claim].add(tag_name)
+                
+            # Initialize this claim in our mapping if needed
+            if claim not in claim_to_issues:
+                claim_to_issues[claim] = set()
+                
+            # Add the actual tags for this event
+            for tag_col in tag_columns:
+                if event[tag_col] == 1:
+                    # Convert tag column name to readable issue name
+                    issue_name = tag_col[4:].replace('_', ' ').title().replace('Lgbt', 'LGBT').replace('Lgbtplus', 'LGBT+')
+                    claim_to_issues[claim].add(issue_name)
         
         # Create detailed claims data
         detailed_claims = []
-        for claim, tags in claim_to_tags.items():
-            for tag in tags:
+        for claim, issues in claim_to_issues.items():
+            for issue in issues:
                 detailed_claims.append({
                     'Claim': claim,
-                    'Claim Count': claim_counts.get(claim, 0),
-                    'Issue': tag
+                    'Claim Count': claim_counts.get(claim, 0) if claim in claim_counts else 0,
+                    'Issue': issue
                 })
         
         # Convert to DataFrame and remove duplicates
@@ -139,11 +145,11 @@ def main():
         
         # Create a simplified version with claims, counts, and their issues
         simplified_data = []
-        for claim, tags in claim_to_tags.items():
+        for claim, issues in claim_to_issues.items():
             simplified_data.append({
                 'Claim': claim,
-                'Claim Count': claim_counts.get(claim, 0),
-                'Issues': ', '.join(sorted(tags))  # Join all issues for this claim
+                'Claim Count': claim_counts.get(claim, 0) if claim in claim_counts else 0,
+                'Issues': ', '.join(sorted(issues))  # Join all issues for this claim
             })
         
         simplified_df = pd.DataFrame(simplified_data).sort_values('Claim Count', ascending=False)
