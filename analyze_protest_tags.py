@@ -14,7 +14,7 @@ def main():
         'Abortion': ['abortion', 'reproductive rights', 'pro-choice', 'women\'s rights'],
         'LGBT+': ['lgbt', 'lgbtq', 'gay', 'trans', 'transgender', 'queer'],
         'Environment': ['climate', 'environment', 'green', 'fossil fuel', 'pollution'],
-        'Immigration': ['immigration', 'immigrant', 'ice', 'border', 'migrant', 'refugee', 'asylum'],
+        'Immigration': ['immigration', 'immigrant', ' ICE ', 'ICE,', 'ICE.', 'ICE:', 'border', 'migrant', 'refugee', 'asylum', 'deportation'],
         'Trump': ['trump', 'president trump', 'donald trump'],
         'Musk': ['musk', 'elon musk'],
         'Gun Control': ['gun', 'firearm', 'nra', 'second amendment'],
@@ -42,6 +42,16 @@ def main():
                 'palestine' in claim_lower or 'israel' in claim_lower):
                 return 1
             return 0
+        
+        # Special handling for Immigration tag
+        if tag_name == 'Immigration':
+            # Check for ICE with proper capitalization to avoid matching words ending in 'ice'
+            if ' ICE ' in claim_text or 'ICE,' in claim_text or 'ICE.' in claim_text or 'ICE:' in claim_text:
+                return 1
+            
+            # Check for other immigration-related keywords
+            immigration_keywords = ['immigration', 'immigrant', 'border', 'migrant', 'refugee', 'asylum', 'deportation']
+            return 1 if any(keyword.lower() in claim_lower for keyword in immigration_keywords) else 0
         
         # Standard keyword check for other tags
         return 1 if any(keyword.lower() in claim_lower for keyword in keywords) else 0
