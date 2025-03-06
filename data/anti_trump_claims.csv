@@ -1,0 +1,118 @@
+claim,count,anti_trump,sentiment,left_leaning,right_leaning
+against Donald Trump,324,True,neutral,False,False
+against President Trump's abuse of power,177,True,neutral,False,False
+against President Trump,157,True,neutral,False,False
+against Donald Trump's agenda,75,True,neutral,False,False
+against President Trump's recent de-funding of several public service institutions,11,True,left,True,False
+against Donald Trump's mass layoffs of federal employees across the country,11,True,neutral,False,False
+against President Trump's immigration policies,7,True,left,True,False
+against President Trump's abuse of executive power,7,True,neutral,False,False
+against President Trump and Elon Musk's cooptation of U.S. Office of Personnel Management,6,True,left,True,False
+against Donald Trump's immigration policies,5,True,left,True,False
+against President Trump's executive orders,4,True,neutral,False,False
+against President Trump's support for Israel,4,True,neutral,False,False
+against Trump,4,True,neutral,False,False
+against president Trump's policies,3,True,neutral,False,False
+against Donald Trump's inauguration as U.S. president,3,True,neutral,False,False
+against President Trump's negotiations with Russia regarding the Ukraine War,2,True,neutral,False,False
+against President Trump's policies,2,True,neutral,False,False
+against Donald Trump's executive orders,2,True,neutral,False,False
+against Trump's executive orders,2,True,neutral,False,False
+"against Donald Trumpâs immigration policies targeting undocumented immigrants, for the right of students to protest in solidarity with their families, against deportations breaking up hardworking families, for keeping parents and children together regardless of immigration status, against policies that instill fear in Hispanic communities, for recognizing the contributions of immigrants to American society, against government actions that criminalize people seeking a better life, for students standing up for their uncles fathers and friends, against the pain of forced family separations, for young people using their voices to advocate for justice, against ICE orders that disproportionately affect Latino families",2,True,left,True,False
+"against forced return-to-office mandates, for remote work flexibility in federal jobs, against buyouts forcing government employees out, for protecting virtual work opportunities in public service, against executive orders eliminating telework, for workplace stability in government agencies, against Trump administration job cuts, for federal employees' rights to job security, against disruptions to Commerce Department employment",2,True,left,True,False
+"against Trumpâs mass deportations, for students' right to protest policies that harm their families, against ICE raids disrupting communities, for keeping families together, against the fear instilled in undocumented families, for young people standing up for justice, against policies that criminalize immigrants seeking better lives, for student activism in defense of their friends and loved ones, against a system that dehumanizes migrants, for constructive dialogue about immigration policies, against the increased enforcement tearing apart communities",2,True,left,True,False
+against President Trump being elected as the new chair of the John F. Kennedy Center for the Performing Arts,2,True,neutral,False,False
+against President Trump's Medicaid rollback policies,2,True,neutral,False,False
+against Trump claiming Ukraine was responsible for the war,2,True,neutral,False,False
+against Donald Trump's policies,2,True,neutral,False,False
+against President Trump's attempts to defund public services,1,True,left,True,False
+against President Trump assigning himeslf role of president of the Kennedy Center,1,True,neutral,False,False
+against President Trump's mass layoffs of federal employees,1,True,neutral,False,False
+against Trump administration's federal employee cuts,1,True,neutral,False,False
+against President Trumpâs ethnic cleansing plans for Gaza,1,True,left,True,False
+against President Trump's attack on rights,1,True,neutral,False,False
+"against Donald Trump's funding cuts to the National Institutes of Health, Center for Disease Control and Prevention, and National Science Foundation",1,True,neutral,False,False
+against President Trump's cuts to federal agencies,1,True,neutral,False,False
+against President Trump's attacks on immigrants,1,True,left,True,False
+against President Trump cutting funds to USAID,1,True,neutral,False,False
+against President Trump's administrative order,1,True,neutral,False,False
+"against President Donald Trumpâs federal funding freeze, against Elon Muskâs efforts to remake the federal government, urging U.S. Rep. Lloyd Smucker to speak out against Trumpâs actions, calling for Smucker to take a stronger stand in his oversight role, against the unchecked power of the executive branch, advocating for more action to protect the power of the peopleâs House",1,True,neutral,False,False
+"against federal intervention in D.C. governance, for D.C. autonomy and self-determination, against Trump's executive order to ""beautify"" the city, for community-led solutions to crime and homelessness, against forced removals of homeless camps, for local leadership addressing public safety concerns, against the Trump administration's lack of engagement with D.C. communities, for unity in addressing crime and violence, against outsider narratives dictating D.C.'s future, for preserving the city's unique culture and resident-led policies",1,True,neutral,False,False
+"against federal interference in D.C. governance, for D.C. self-determination and statehood, against Trump's reported executive order imposing tougher crime penalties in D.C., against federal-led clearing of homeless encampments, for locally driven solutions to crime and housing, against Trump's characterization of D.C. as ""filthy and crime ridden,"" for protecting D.C.'s autonomy from federal overreach, against the Trump administrationâs broader effort to ""take over"" the city, for community-led policies addressing public safety and homelessness",1,True,neutral,False,False
+against President Trump's plan to take over Gaza while relocating residents to neighboring countries,1,True,left,True,False
+"against mass layoffs of federal employees, for job security in public service, against Elon Musk's role in government affairs, for congressional accountability over executive actions, against cuts to USAID and foreign aid programs, for transparency in government restructuring, against undermining constitutional democracy, for the protection of democratic institutions, against forced buyouts and arbitrary dismissals of civil servants, for responsible governance that upholds the rule of law, against Trump and Musk consolidating power, for ethical oversight of federal decision-making, against using DEI as a scapegoat for unrelated tragedies",1,True,left,True,False
+against President Trump's administration efforts to end gender-affirming care,1,True,neutral,False,False
+against Donald Trump's mass deportation plan,1,True,neutral,False,False
+against President Trump's DEI policies,1,True,neutral,False,False
+against President Trump's abuse of powr,1,True,neutral,False,False
+against President Trump laying off thousands of federal employees,1,True,neutral,False,False
+against President Trump's executive orders attacking transgender people,1,True,right,False,True
+against anti-Trump protest,1,True,neutral,False,False
+against President Trump's recent mass firings of federal employees,1,True,neutral,False,False
+in celebration of victory by Palestinian resistance and release of Palestinian prisoners,1,True,left,True,False
+against Donald Trump's inauguration,1,True,neutral,False,False
+against Donald Trump's presidency,1,True,neutral,False,False
+against President Trump's executive orders to deport immigrants,1,True,left,True,False
+against Donald Trump and the Republican Party's agenda,1,True,neutral,False,False
+against President Trump and the Republican Party,1,True,neutral,False,False
+against the impeachment of South Korean President Yoon Suk-yeol,1,True,neutral,False,False
+against Donald Trumps efforts to end DEI programs,1,True,neutral,False,False
+against Donald Trumps executive orders,1,True,neutral,False,False
+against Donald Trump's agenda while being in office,1,True,left,True,False
+against Donald Trump's nomination of Liberty Energy oil executive Chris Wright for U.S. Secretary of Energy,1,True,neutral,False,False
+against Trump's executive order,1,True,neutral,False,False
+against President Trump's inauguration,1,True,neutral,False,False
+for awareness of histories of resistance and repression hidden at UNC,1,True,neutral,False,False
+against Donald Trump's threatened deportations of migrants,1,True,neutral,False,False
+against Donald Trump's planned deportations of immigrants,1,True,left,True,False
+against Donald Trump's promises of transphobic policies and systemic oppression,1,True,neutral,False,False
+in celebration of Palestinian resistance,1,True,left,True,False
+against Donald Trump's extreme-right billionaire agenda,1,True,neutral,False,False
+against anti-Trump protesters,1,True,neutral,False,False
+against President Donald Trump's abuse of power,1,True,neutral,False,False
+against Donald Trump's recent firings of federal employees,1,True,neutral,False,False
+against President Trump's mass firing of federal employees,1,True,neutral,False,False
+against President Trump and Elon Musk's attacks of U.S. Department of Labor,1,True,neutral,False,False
+against President Trump's actions in office,1,True,left,True,False
+against President Trump's polices,1,True,left,True,False
+"against Trumpâs mass deportation plans, for immigrant rights and dignity, against forced family separations, for unity and solidarity among Black and Brown communities, against xenophobia and exclusionary policies, for Tulsa recognizing and embracing its immigrant population, against policies that create fear and instability",1,True,left,True,False
+"against Donald Trumpâs immigration policies, for protecting immigrant families from deportation, against the removal of limitations on ICE arrests in schools, churches, and hospitals, for ensuring children feel safe seeking medical help, against the targeting of nonviolent immigrants, for recognizing the struggles of migrants crossing the desert for a better life, against criminalizing undocumented entry without considering the circumstances, for keeping communities intact and families together",1,True,left,True,False
+against Donald Trumpâs immigration policies,1,True,left,True,False
+"against Donald Trumpâs immigration policies, against Ron DeSantis' immigration policies, for supporting immigrant families, against ICE raids instilling fear in communities, for recognizing immigrants' contributions to local businesses, against labeling immigrants as criminals, for allowing immigrant families to live without fear",1,True,left,True,False
+"against Trumpâs immigration policies, for standing up for immigrant families, against mass deportations, for keeping families together, against the fear and uncertainty facing undocumented students, for students using their voices to demand justice, against the dehumanization of immigrants, for recognizing the humanity of all people, against school staff attempting to suppress student activism, for the right to protest peacefully",1,True,left,True,False
+against Donald Trump's deportation push,1,True,neutral,False,False
+against President Trump and Elon Musk's attacks on U.S. agencies and administrative capacity,1,True,neutral,False,False
+against President Trump's agenda,1,True,neutral,False,False
+against President Trump and Elon Musk's attempted shutdown of the U.S. Agency for International Development,1,True,neutral,False,False
+against President Trump's restrictions on diversity equity and inclusion policies,1,True,left,True,False
+against President Trump and the MAGA agenda,1,True,right,False,True
+against President Trump's restictions on federal funding,1,True,neutral,False,False
+against President Trump's visit to New Orleans for the Super Bowl,1,True,neutral,False,False
+against President Trump's threats to withhold funding for hospitals in New York City for providing gender affirming care to people under the age of 19,1,True,neutral,False,False
+against President Trump's executive orders attacking trans people,1,True,neutral,False,False
+against President Trump's adminstrations efforts to dismantle the U.S. Department of Education,1,True,neutral,False,False
+"against federal worker buyouts, for job security in public service, against mass terminations of government employees, for protecting labor rights in federal agencies, against Trump's executive order on worker dismissals, for AFGE's fight to protect government jobs, against dismantling of federal workforce, for solidarity among unions defending public employees, against cuts to essential government services, for fair treatment of probationary federal workers",1,True,left,True,False
+against President Trump and Elon Musk's attacks of U.S. Department of the Treasury,1,True,neutral,False,False
+against Trump adminstration policies,1,True,neutral,False,False
+"against U.S. involvement in Israelâs actions in Gaza, for Palestinian self-determination, against Trumpâs plan to take over Gaza, for honoring the ceasefire agreement, against leveraging foreign aid to pressure Jordan and Egypt, for stopping the ethnic cleansing of Palestinians, against continued attacks on displaced Palestinians, for recognizing Gazaâs history and the right of Palestinians to remain on their land, against destruction of Palestinian infrastructure and homes",1,True,left,True,False
+against President Trump's attacks on USAID and Presidentâs Emergency Plan For AIDS Relief,1,True,neutral,False,False
+against anti-Trump demonstrators,1,True,neutral,False,False
+against President Trump's position to take control of Gaza,1,True,left,True,False
+"against President Trump's attempts to erase and threaten the lives of trans, non-binary, two-spirit, and intersex people",1,True,neutral,False,False
+against Trump calling Zelensky a dictator,1,True,neutral,False,False
+for Senator Susan Collins to take action against President Trump,1,True,neutral,False,False
+against President Trump's effort to suspend the US's refugee resettlement program,1,True,left,True,False
+for all democratic politicians to take more action against trump,1,True,neutral,False,False
+against President Trump's job cuts that threaten critical scientific research fisheries sustaniability and the livelihood of costal communities,1,True,neutral,False,False
+against Donald Trump's cuts to federal funding,1,True,neutral,False,False
+against Donald Trump's recent firings of federal employees at the Department of Health and Human Services,1,True,left,True,False
+against President Trump's recent firings of federal employees,1,True,neutral,False,False
+against Trump's executive orders aimed at increasing deportations and tightening border security,1,True,ambiguous,False,False
+against President Trump dismantling DEI initiatives on school campuses,1,True,neutral,False,False
+against Trump administration,1,True,neutral,False,False
+against Donald Trump's cuts to academic research funding,1,True,neutral,False,False
+against President Trumpâs Executive Order âEnsuring Accountability for All Agenciesâ,1,True,neutral,False,False
+for Jeffries to take more action against trump,1,True,neutral,False,False
+for elected leaders in Oakland and the East Bay resisting deportation policies,1,True,neutral,False,False
+"against ICE enforcement at hospitals, schools, and places of worship, for protecting immigrant access to essential services, against fear-driven policies targeting immigrant communities, for maintaining public safety and trust in institutions, against Trumpâs rollback of sensitive location protections, for the passage of the Protecting Sensitive Locations Act, against intimidation that deters parents from sending children to school, for religious liberty and the sanctity of faith-based spaces",1,True,left,True,False
+against President Trump's immigrant deportations and family separations,1,True,left,True,False

@@ -1,0 +1,908 @@
+{
+  "basic_info": {
+    "file_info": {
+      "file_name": "ccc-phase3-public.csv",
+      "directory": "/Users/nealcaren/Downloads/ccc-2025",
+      "size_bytes": 2743411,
+      "size_mb": 2.62,
+      "created_date": "2025-03-03T21:11:19.529437",
+      "modified_date": "2025-03-03T21:11:00.931978",
+      "encoding": "utf-8"
+    },
+    "num_rows": 4492,
+    "num_columns": 71,
+    "total_cells": 318932,
+    "missing_cells": 202106,
+    "missing_percentage": 63.37,
+    "duplicate_rows": 0,
+    "duplicate_percentage": 0.0
+  },
+  "column_analysis": {
+    "date": {
+      "data_type": "category",
+      "unique_value_count": 83,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "2025-01-18": 378,
+        "2025-02-17": 220,
+        "2025-02-05": 174
+      },
+      "mode_value": "2025-01-18",
+      "top_3_percentage": 17.19,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "locality": {
+      "data_type": "object",
+      "unique_value_count": 784,
+      "missing_value_count": 2,
+      "missing_percentage": 0.04,
+      "top_3_values": {
+        "Washington": 255,
+        "New York": 218,
+        "Los Angeles": 158
+      },
+      "mode_value": "Washington",
+      "top_3_percentage": 14.05
+    },
+    "state": {
+      "data_type": "category",
+      "unique_value_count": 53,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "CA": 768,
+        "NY": 509,
+        "MA": 275
+      },
+      "mode_value": "CA",
+      "top_3_percentage": 34.55,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "resolved_locality": {
+      "data_type": "object",
+      "unique_value_count": 784,
+      "missing_value_count": 2,
+      "missing_percentage": 0.04,
+      "top_3_values": {
+        "Washington": 255,
+        "New York": 218,
+        "Los Angeles": 158
+      },
+      "mode_value": "Washington",
+      "top_3_percentage": 14.05
+    },
+    "resolved_state": {
+      "data_type": "category",
+      "unique_value_count": 53,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "CA": 768,
+        "NY": 509,
+        "MA": 275
+      },
+      "mode_value": "CA",
+      "top_3_percentage": 34.55,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "resolved_county": {
+      "data_type": "object",
+      "unique_value_count": 430,
+      "missing_value_count": 438,
+      "missing_percentage": 9.75,
+      "top_3_values": {
+        "District of Columbia": 254,
+        "Los Angeles County": 243,
+        "Middlesex County": 99
+      },
+      "mode_value": "District of Columbia",
+      "top_3_percentage": 13.27
+    },
+    "fips_code": {
+      "data_type": "float64",
+      "unique_value_count": 526,
+      "missing_value_count": 113,
+      "missing_percentage": 2.52,
+      "mean_value": 26392.88,
+      "std_dev": 16601.35,
+      "min_value": 1003.0,
+      "max_value": 72000.0,
+      "median": 25017.0
+    },
+    "lat": {
+      "data_type": "float64",
+      "unique_value_count": 786,
+      "missing_value_count": 115,
+      "missing_percentage": 2.56,
+      "mean_value": 39.12,
+      "std_dev": 5.12,
+      "min_value": 19.64,
+      "max_value": 64.84,
+      "median": 39.95
+    },
+    "lon": {
+      "data_type": "float64",
+      "unique_value_count": 786,
+      "missing_value_count": 115,
+      "missing_percentage": 2.56,
+      "mean_value": -93.75,
+      "std_dev": 20.38,
+      "min_value": -166.54,
+      "max_value": -68.42,
+      "median": -87.69
+    },
+    "location": {
+      "data_type": "object",
+      "unique_value_count": 1789,
+      "missing_value_count": 256,
+      "missing_percentage": 5.7,
+      "top_3_values": {
+        "Lafayette Square": 72,
+        "DC Central Detention Facility": 69,
+        "Sherman Oaks Galleria": 68
+      },
+      "mode_value": "Lafayette Square",
+      "top_3_percentage": 4.65
+    },
+    "title": {
+      "data_type": "object",
+      "unique_value_count": 793,
+      "missing_value_count": 2139,
+      "missing_percentage": 47.62,
+      "top_3_values": {
+        "People's March": 176,
+        "#FreedomCorner": 68,
+        "White House Peace Vigil": 68
+      },
+      "mode_value": "People's March",
+      "top_3_percentage": 6.95
+    },
+    "event_type": {
+      "data_type": "object",
+      "unique_value_count": 33,
+      "missing_value_count": 15,
+      "missing_percentage": 0.33,
+      "top_3_values": {
+        "demonstration": 2503,
+        "rally": 733,
+        "rally; march": 595
+      },
+      "mode_value": "demonstration",
+      "top_3_percentage": 85.28,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "organizations": {
+      "data_type": "object",
+      "unique_value_count": 1162,
+      "missing_value_count": 886,
+      "missing_percentage": 19.72,
+      "top_3_values": {
+        "50501 Movement": 216,
+        "Abortion Action Now; Time to Act; SisterSong; Women\u00e2\u0080\u0099s March; Popular Democracy; Harriet\u00e2\u0080\u0099s Wildest Dreams; The Feminist Front; NOW; Planned Parenthood; National Women\u00e2\u0080\u0099s Law Center; Frontline": 199,
+        "Run For Their Lives": 118
+      },
+      "mode_value": "50501 Movement",
+      "top_3_percentage": 11.87
+    },
+    "participants": {
+      "data_type": "object",
+      "unique_value_count": 233,
+      "missing_value_count": 3868,
+      "missing_percentage": 86.11,
+      "top_3_values": {
+        "students": 121,
+        "elected officials": 58,
+        "families; children": 41
+      },
+      "mode_value": "students",
+      "top_3_percentage": 4.9
+    },
+    "notables": {
+      "data_type": "object",
+      "unique_value_count": 174,
+      "missing_value_count": 4316,
+      "missing_percentage": 96.08,
+      "top_3_values": {
+        "Rev. Al Sharpton": 2,
+        "Sen. Bernie Sanders": 2,
+        "Lt. Gov. Susan Bysiewicz": 1
+      },
+      "mode_value": "Rev. Al Sharpton",
+      "top_3_percentage": 0.11,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "targets": {
+      "data_type": "object",
+      "unique_value_count": 265,
+      "missing_value_count": 3175,
+      "missing_percentage": 70.68,
+      "top_3_values": {
+        "Donald Trump": 402,
+        "President Trump": 282,
+        "President Trump; Elon Musk": 96
+      },
+      "mode_value": "Donald Trump",
+      "top_3_percentage": 17.36
+    },
+    "claims_summary": {
+      "data_type": "object",
+      "unique_value_count": 1358,
+      "missing_value_count": 1,
+      "missing_percentage": 0.02,
+      "top_3_values": {
+        "against Donald Trump; for women's rights; for reproductive rights; for LGBTQ+ rights; for immigrants' rights; for climate action; for fair wages; against gun violence; for freedom": 273,
+        "against genocide in Gaza; for Palestinian liberation": 209,
+        "for Palestinian liberation": 205
+      },
+      "mode_value": "against Donald Trump; for women's rights; for reproductive rights; for LGBTQ+ rights; for immigrants' rights; for climate action; for fair wages; against gun violence; for freedom",
+      "top_3_percentage": 15.29
+    },
+    "claims_verbatim": {
+      "data_type": "object",
+      "unique_value_count": 1351,
+      "missing_value_count": 3095,
+      "missing_percentage": 68.9,
+      "top_3_values": {
+        "justice is deserved; stop abuse; fur babies matter; do your job jody; honk 4 justice; justice for the marlin dogs; #marlingate": 9,
+        "Palestine flag": 6,
+        "Ukraine flag": 5
+      },
+      "mode_value": "justice is deserved; stop abuse; fur babies matter; do your job jody; honk 4 justice; justice for the marlin dogs; #marlingate",
+      "top_3_percentage": 0.45
+    },
+    "valence": {
+      "data_type": "float64",
+      "unique_value_count": 3,
+      "missing_value_count": 7,
+      "missing_percentage": 0.16,
+      "mean_value": 0.52,
+      "std_dev": 0.59,
+      "min_value": 0.0,
+      "max_value": 2.0,
+      "median": 0.0
+    },
+    "conf": {
+      "data_type": "float64",
+      "unique_value_count": 2,
+      "missing_value_count": 2789,
+      "missing_percentage": 62.09,
+      "mean_value": 1.0,
+      "std_dev": 0.03,
+      "min_value": 0.0,
+      "max_value": 1.0,
+      "median": 1.0
+    },
+    "macroevent": {
+      "data_type": "object",
+      "unique_value_count": 66,
+      "missing_value_count": 4356,
+      "missing_percentage": 96.97,
+      "top_3_values": {
+        "20250118-dc-peoplesmarch": 4,
+        "20250125-dc-marchforlife": 3,
+        "20250125-sf-marchforlife": 3
+      },
+      "mode_value": "20250118-dc-peoplesmarch",
+      "top_3_percentage": 0.22,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "online": {
+      "data_type": "int64",
+      "unique_value_count": 2,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 0.0,
+      "std_dev": 0.04,
+      "min_value": 0.0,
+      "max_value": 1.0,
+      "median": 0.0
+    },
+    "size_text": {
+      "data_type": "object",
+      "unique_value_count": 372,
+      "missing_value_count": 3108,
+      "missing_percentage": 69.19,
+      "top_3_values": {
+        "count video": 297,
+        "count pic": 214,
+        "hundreds": 147
+      },
+      "mode_value": "count video",
+      "top_3_percentage": 14.65
+    },
+    "size_low": {
+      "data_type": "float64",
+      "unique_value_count": 68,
+      "missing_value_count": 3107,
+      "missing_percentage": 69.17,
+      "mean_value": 158.37,
+      "std_dev": 610.75,
+      "min_value": 1.0,
+      "max_value": 20000.0,
+      "median": 60.0
+    },
+    "size_high": {
+      "data_type": "float64",
+      "unique_value_count": 72,
+      "missing_value_count": 3108,
+      "missing_percentage": 69.19,
+      "mean_value": 303.26,
+      "std_dev": 2839.88,
+      "min_value": 1.0,
+      "max_value": 100000.0,
+      "median": 75.0
+    },
+    "size_mean": {
+      "data_type": "float64",
+      "unique_value_count": 106,
+      "missing_value_count": 3108,
+      "missing_percentage": 69.19,
+      "mean_value": 230.84,
+      "std_dev": 1545.96,
+      "min_value": 1.0,
+      "max_value": 51000.0,
+      "median": 65.0
+    },
+    "size_cat": {
+      "data_type": "int64",
+      "unique_value_count": 5,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 0.46,
+      "std_dev": 0.76,
+      "min_value": 0.0,
+      "max_value": 4.0,
+      "median": 0.0
+    },
+    "participant_measures": {
+      "data_type": "object",
+      "unique_value_count": 827,
+      "missing_value_count": 3321,
+      "missing_percentage": 73.93,
+      "top_3_values": {
+        "vigil": 82,
+        "bicycle ride": 47,
+        "amplified sound": 23
+      },
+      "mode_value": "vigil",
+      "top_3_percentage": 3.38
+    },
+    "police_measures": {
+      "data_type": "object",
+      "unique_value_count": 128,
+      "missing_value_count": 4268,
+      "missing_percentage": 95.01,
+      "top_3_values": {
+        "on scene": 64,
+        "on scene; barricades": 8,
+        "called to scene": 6
+      },
+      "mode_value": "on scene",
+      "top_3_percentage": 1.74,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "participant_injuries": {
+      "data_type": "object",
+      "unique_value_count": 4,
+      "missing_value_count": 4484,
+      "missing_percentage": 99.82,
+      "top_3_values": {
+        "unspecified": 3,
+        "1.0": 3,
+        "outside the Republican headquarters in Farmington": 1
+      },
+      "mode_value": "unspecified",
+      "top_3_percentage": 0.16,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "police_injuries": {
+      "data_type": "float64",
+      "unique_value_count": 0,
+      "missing_value_count": 4492,
+      "missing_percentage": 100.0
+    },
+    "arrests": {
+      "data_type": "object",
+      "unique_value_count": 8,
+      "missing_value_count": 4457,
+      "missing_percentage": 99.22,
+      "mean_value": 2.7,
+      "std_dev": 2.46,
+      "min_value": 1.0,
+      "max_value": 10.0,
+      "median": 1.0
+    },
+    "property_damage": {
+      "data_type": "object",
+      "unique_value_count": 7,
+      "missing_value_count": 4479,
+      "missing_percentage": 99.71,
+      "top_3_values": {
+        "graffiti": 6,
+        "one vehicle had its windshield broken": 2,
+        "broken windows; graffiti; vandalized office equipment": 1
+      },
+      "mode_value": "graffiti",
+      "top_3_percentage": 0.2,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "arrests_any": {
+      "data_type": "int64",
+      "unique_value_count": 2,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 0.01,
+      "std_dev": 0.09,
+      "min_value": 0.0,
+      "max_value": 1.0,
+      "median": 0.0
+    },
+    "participant_casualties_any": {
+      "data_type": "int64",
+      "unique_value_count": 2,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 0.0,
+      "std_dev": 0.04,
+      "min_value": 0.0,
+      "max_value": 1.0,
+      "median": 0.0
+    },
+    "police_casualties_any": {
+      "data_type": "int64",
+      "unique_value_count": 1,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 0.0,
+      "std_dev": 0.0,
+      "min_value": 0.0,
+      "max_value": 0.0,
+      "median": 0.0
+    },
+    "property_damage_any": {
+      "data_type": "int64",
+      "unique_value_count": 2,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 0.0,
+      "std_dev": 0.05,
+      "min_value": 0.0,
+      "max_value": 1.0,
+      "median": 0.0
+    },
+    "participant_deaths": {
+      "data_type": "float64",
+      "unique_value_count": 0,
+      "missing_value_count": 4492,
+      "missing_percentage": 100.0
+    },
+    "police_deaths": {
+      "data_type": "float64",
+      "unique_value_count": 0,
+      "missing_value_count": 4492,
+      "missing_percentage": 100.0
+    },
+    "notes": {
+      "data_type": "object",
+      "unique_value_count": 216,
+      "missing_value_count": 2180,
+      "missing_percentage": 48.53,
+      "top_3_values": {
+        "every Sunday": 517,
+        "every Friday": 406,
+        "every Saturday": 345
+      },
+      "mode_value": "every Sunday",
+      "top_3_percentage": 28.23,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "coder": {
+      "data_type": "object",
+      "unique_value_count": 68,
+      "missing_value_count": 8,
+      "missing_percentage": 0.18,
+      "top_3_values": {
+        "JU": 3022,
+        "SH": 573,
+        "ML": 190
+      },
+      "mode_value": "JU",
+      "top_3_percentage": 84.26,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source1": {
+      "data_type": "object",
+      "unique_value_count": 647,
+      "missing_value_count": 3,
+      "missing_percentage": 0.07,
+      "top_3_values": {
+        "www.instagram.com": 1927,
+        "action.womensmarch.com": 276,
+        "x.com": 117
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 51.65
+    },
+    "source2": {
+      "data_type": "object",
+      "unique_value_count": 441,
+      "missing_value_count": 2896,
+      "missing_percentage": 64.47,
+      "top_3_values": {
+        "www.instagram.com": 540,
+        "www.theguardian.com": 68,
+        "x.com": 61
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 14.89
+    },
+    "source3": {
+      "data_type": "object",
+      "unique_value_count": 234,
+      "missing_value_count": 3946,
+      "missing_percentage": 87.85,
+      "top_3_values": {
+        "www.instagram.com": 182,
+        "x.com": 31,
+        "www.indybay.org": 11
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 4.99
+    },
+    "source4": {
+      "data_type": "object",
+      "unique_value_count": 129,
+      "missing_value_count": 4230,
+      "missing_percentage": 94.17,
+      "top_3_values": {
+        "www.instagram.com": 91,
+        "x.com": 15,
+        "www.cbsnews.com": 4
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 2.45,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source5": {
+      "data_type": "object",
+      "unique_value_count": 84,
+      "missing_value_count": 4329,
+      "missing_percentage": 96.37,
+      "top_3_values": {
+        "www.instagram.com": 57,
+        "x.com": 15,
+        "www.cbsnews.com": 3
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 1.67,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source6": {
+      "data_type": "object",
+      "unique_value_count": 70,
+      "missing_value_count": 4381,
+      "missing_percentage": 97.53,
+      "top_3_values": {
+        "www.instagram.com": 30,
+        "x.com": 7,
+        "online submission": 3
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.89,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source7": {
+      "data_type": "object",
+      "unique_value_count": 50,
+      "missing_value_count": 4415,
+      "missing_percentage": 98.29,
+      "top_3_values": {
+        "www.instagram.com": 21,
+        "x.com": 5,
+        "t.me": 3
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.65,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source8": {
+      "data_type": "object",
+      "unique_value_count": 36,
+      "missing_value_count": 4437,
+      "missing_percentage": 98.78,
+      "top_3_values": {
+        "www.instagram.com": 12,
+        "x.com": 8,
+        "www.cbsnews.com": 2
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.49,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source9": {
+      "data_type": "object",
+      "unique_value_count": 26,
+      "missing_value_count": 4454,
+      "missing_percentage": 99.15,
+      "top_3_values": {
+        "www.instagram.com": 7,
+        "x.com": 5,
+        "www.oregonlive.com": 2
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.31,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source10": {
+      "data_type": "object",
+      "unique_value_count": 22,
+      "missing_value_count": 4465,
+      "missing_percentage": 99.4,
+      "top_3_values": {
+        "www.instagram.com": 4,
+        "www.nbcnews.com": 2,
+        "t.me": 2
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.18,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source11": {
+      "data_type": "object",
+      "unique_value_count": 18,
+      "missing_value_count": 4472,
+      "missing_percentage": 99.55,
+      "top_3_values": {
+        "www.instagram.com": 2,
+        "x.com": 2,
+        "nypost.com": 1
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.11,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source12": {
+      "data_type": "object",
+      "unique_value_count": 14,
+      "missing_value_count": 4475,
+      "missing_percentage": 99.62,
+      "top_3_values": {
+        "www.instagram.com": 4,
+        "www.turnto23.com": 1,
+        "www.cbsnews.com": 1
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.13,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source13": {
+      "data_type": "object",
+      "unique_value_count": 9,
+      "missing_value_count": 4482,
+      "missing_percentage": 99.78,
+      "top_3_values": {
+        "www.instagram.com": 2,
+        "x.com": 1,
+        "fightbacknews.org": 1
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.09,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source14": {
+      "data_type": "object",
+      "unique_value_count": 7,
+      "missing_value_count": 4485,
+      "missing_percentage": 99.84,
+      "top_3_values": {
+        "www.instagram.com": 1,
+        "www.ajc.com": 1,
+        "x.com": 1
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.07,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source15": {
+      "data_type": "object",
+      "unique_value_count": 6,
+      "missing_value_count": 4486,
+      "missing_percentage": 99.87,
+      "top_3_values": {
+        "x.com": 1,
+        "www.npr.org": 1,
+        "www.nbclosangeles.com": 1
+      },
+      "mode_value": "x.com",
+      "top_3_percentage": 0.07,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source16": {
+      "data_type": "object",
+      "unique_value_count": 4,
+      "missing_value_count": 4488,
+      "missing_percentage": 99.91,
+      "top_3_values": {
+        "www.washingtonpost.com": 1,
+        "www.wusa9.com": 1,
+        "fightbacknews.org": 1
+      },
+      "mode_value": "www.washingtonpost.com",
+      "top_3_percentage": 0.07,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source17": {
+      "data_type": "object",
+      "unique_value_count": 3,
+      "missing_value_count": 4489,
+      "missing_percentage": 99.93,
+      "top_3_values": {
+        "www.nytimes.com": 1,
+        "t.me": 1,
+        "fightbacknews.org": 1
+      },
+      "mode_value": "www.nytimes.com",
+      "top_3_percentage": 0.07,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source18": {
+      "data_type": "object",
+      "unique_value_count": 3,
+      "missing_value_count": 4489,
+      "missing_percentage": 99.93,
+      "top_3_values": {
+        "t.me": 1,
+        "fightbacknews.org": 1,
+        "denverite.com": 1
+      },
+      "mode_value": "t.me",
+      "top_3_percentage": 0.07,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source19": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "www.instagram.com": 1
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source20": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "x.com": 1
+      },
+      "mode_value": "x.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source21": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "dcmediagroup.us": 1
+      },
+      "mode_value": "dcmediagroup.us",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source22": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "www.bostonglobe.com": 1
+      },
+      "mode_value": "www.bostonglobe.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source23": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "www.wusa9.com": 1
+      },
+      "mode_value": "www.wusa9.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source24": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "wjla.com": 1
+      },
+      "mode_value": "wjla.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source25": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "wtop.com": 1
+      },
+      "mode_value": "wtop.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source26": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "georgetownvoice.com": 1
+      },
+      "mode_value": "georgetownvoice.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source27": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "ctmirror.org": 1
+      },
+      "mode_value": "ctmirror.org",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source28": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "www.ajc.com": 1
+      },
+      "mode_value": "www.ajc.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source29": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "www.instagram.com": 1
+      },
+      "mode_value": "www.instagram.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    },
+    "source30": {
+      "data_type": "object",
+      "unique_value_count": 1,
+      "missing_value_count": 4491,
+      "missing_percentage": 99.98,
+      "top_3_values": {
+        "www.sfchronicle.com": 1
+      },
+      "mode_value": "www.sfchronicle.com",
+      "top_3_percentage": 0.02,
+      "optimization_suggestion": "Consider using category dtype"
+    }
+  }
+}
