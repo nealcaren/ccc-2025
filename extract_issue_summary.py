@@ -96,6 +96,9 @@ def main():
     if Path(claims_with_tags_file).exists():
         claims_df = pd.read_csv(claims_with_tags_file)
         
+        # Create a dictionary to count claim occurrences
+        claim_counts = claims_df['claim'].value_counts().to_dict()
+        
         # Create a list to store detailed claims data
         detailed_claims = []
         
@@ -109,17 +112,22 @@ def main():
                     # Add to detailed claims data
                     detailed_claims.append({
                         'Claim': claim,
-                        'Issue': tag_name,
-                        'Claim Count': claims_df[claims_df['claim'] == claim].shape[0]
+                        'Claim Count': claim_counts[claim],
+                        'Issue': tag_name
                     })
         
-        # Convert to DataFrame
-        detailed_df = pd.DataFrame(detailed_claims)
+        # Convert to DataFrame and remove duplicates
+        detailed_df = pd.DataFrame(detailed_claims).drop_duplicates()
         
         # Save to CSV
         output_file = 'data/detailed_claims_by_issue.csv'
         detailed_df.to_csv(output_file, index=False)
         print(f"Saved detailed claims by issue to {output_file}")
+        
+        # Also create a simplified version with just claim, count, and issue
+        simplified_output_file = 'data/claims_issue_check.csv'
+        detailed_df.to_csv(simplified_output_file, index=False)
+        print(f"Saved simplified claims data to {simplified_output_file}")
     else:
         print(f"Warning: {claims_with_tags_file} not found. Run extract_claims_with_tags.py first to generate detailed claims data.")
 
