@@ -100,53 +100,98 @@ async function loadSummaryStats() {
     }
 }
 
-// Load and display events by day chart
+// Load and display events by day chart with toggle for events/participants
 async function loadEventsChart() {
     try {
         const dateCounts = await fetchData('data/date_counts.json');
+        const events = await fetchData('data/events_table.json');
         
         // Prepare data for Chart.js
         const dates = Object.keys(dateCounts).sort();
-        const counts = dates.map(date => dateCounts[date]);
+        const eventCounts = dates.map(date => dateCounts[date]);
+        
+        // Calculate participants by date
+        const participantsByDate = {};
+        events.forEach(event => {
+            if (!participantsByDate[event.date]) {
+                participantsByDate[event.date] = 0;
+            }
+            // Use size_mean if available, otherwise use a default value
+            const size = event.size_mean ? parseFloat(event.size_mean) : 11;
+            participantsByDate[event.date] += size;
+        });
+        
+        // Get participant counts for each date in our sorted dates array
+        const participantCounts = dates.map(date => 
+            participantsByDate[date] ? Math.round(participantsByDate[date]) : 0
+        );
         
         // Create chart
         const ctx = document.getElementById('eventsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: dates,
-                datasets: [{
-                    label: 'Number of Events',
-                    data: counts,
-                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Number of Events'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Date'
+        let eventsChart;
+        
+        // Function to create or update the chart
+        const updateChart = (byParticipants = false) => {
+            const data = byParticipants ? participantCounts : eventCounts;
+            const label = byParticipants ? 'Number of Participants' : 'Number of Events';
+            const color = byParticipants ? 
+                { bg: 'rgba(255, 99, 132, 0.5)', border: 'rgba(255, 99, 132, 1)' } : 
+                { bg: 'rgba(54, 162, 235, 0.5)', border: 'rgba(54, 162, 235, 1)' };
+            
+            // If chart exists, destroy it first
+            if (eventsChart) {
+                eventsChart.destroy();
+            }
+            
+            // Create new chart
+            eventsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: color.bg,
+                        borderColor: color.border,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: label
+                            }
                         },
-                        ticks: {
-                            maxRotation: 90,
-                            minRotation: 45
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            },
+                            ticks: {
+                                maxRotation: 90,
+                                minRotation: 45
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+        };
+        
+        // Initial chart creation
+        updateChart(false);
+        
+        // Add event listener to the switch
+        const viewSwitch = document.getElementById('eventsByDayViewSwitch');
+        if (viewSwitch) {
+            viewSwitch.addEventListener('change', function() {
+                updateChart(this.checked);
+            });
+        }
     } catch (error) {
         console.error('Error loading events chart:', error);
     }
@@ -410,81 +455,6 @@ async function loadTacticsAnalysisChart() {
     }
 }
 
-// Load and display protest size over time chart
-async function loadSizeTimeChart() {
-    try {
-        const events = await fetchData('data/events_table.json');
-        
-        // Group events by date and calculate average size
-        const sizeByDate = {};
-        const countByDate = {};
-        
-        events.forEach(event => {
-            if (!sizeByDate[event.date]) {
-                sizeByDate[event.date] = 0;
-                countByDate[event.date] = 0;
-            }
-            
-            // Use size_mean if available, otherwise use 11
-            const size = event.size_mean !== 'Unknown' ? parseFloat(event.size_mean) : 11;
-            sizeByDate[event.date] += size;
-            countByDate[event.date]++;
-        });
-        
-        // Calculate average size for each date
-        const avgSizeByDate = {};
-        Object.keys(sizeByDate).forEach(date => {
-            avgSizeByDate[date] = sizeByDate[date] / countByDate[date];
-        });
-        
-        // Sort dates
-        const dates = Object.keys(avgSizeByDate).sort();
-        const avgSizes = dates.map(date => avgSizeByDate[date]);
-        
-        // Create chart
-        const ctx = document.getElementById('sizeTimeChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: dates,
-                datasets: [{
-                    label: 'Average Protest Size',
-                    data: avgSizes,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 2,
-                    tension: 0.2,
-                    pointRadius: 3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Average Size'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Date'
-                        },
-                        ticks: {
-                            maxRotation: 90,
-                            minRotation: 45
-                        }
-                    }
-                }
-            }
-        });
-    } catch (error) {
-        console.error('Error loading size time chart:', error);
-    }
-}
 
 
 // Load and display protest issues chart in the summary section
@@ -617,7 +587,6 @@ async function initDashboard() {
         await Promise.all([
             loadSummaryStats(),
             loadEventsChart(),
-            loadSizeTimeChart(),
             loadStatesChart(),
             loadTacticsAnalysisChart(),
             loadEventsTable()
