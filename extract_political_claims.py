@@ -62,21 +62,52 @@ def main():
         'small government', 'deregulation', 'free market', 'capitalism',
         'against cancel culture', 'free speech', 'anti-woke', 'anti-crt',
         'parental rights', 'school choice', 'against mask mandates', 'against vaccine mandates',
-        'medical freedom', 'pro-israel', 'in solidarity with israel', 'against antisemitism'
+        'medical freedom', 'pro-israel', 'in solidarity with israel', 'against antisemitism',
+        'against lgbt', 'against lgbtq', 'against transgender', 'against gay', 
+        'against same-sex', 'against gender', 'against pro-choice', 'against reproductive rights',
+        'against women\'s rights', 'pro-life', 'anti-abortion'
     ]
+    
+    # Helper function to better analyze claim sentiment
+    def analyze_claim_sentiment(claim_text, left_keywords, right_keywords):
+        claim_lower = claim_text.lower()
+        
+        # Check for specific patterns that might be misclassified
+        if ('against' in claim_lower and 'abortion' in claim_lower) or \
+           ('against' in claim_lower and 'pro-choice' in claim_lower) or \
+           ('against' in claim_lower and 'reproductive rights' in claim_lower):
+            return 'right'
+            
+        if ('against' in claim_lower and 'lgbt' in claim_lower) or \
+           ('against' in claim_lower and 'gay' in claim_lower) or \
+           ('against' in claim_lower and 'transgender' in claim_lower):
+            return 'right'
+            
+        # Check for standard keywords
+        left_match = any(keyword.lower() in claim_lower for keyword in left_keywords)
+        right_match = any(keyword.lower() in claim_lower for keyword in right_keywords)
+        
+        if left_match and not right_match:
+            return 'left'
+        elif right_match and not left_match:
+            return 'right'
+        elif left_match and right_match:
+            return 'ambiguous'
+        else:
+            return 'neutral'
     
     # Flag claims
     claims_df['anti_trump'] = claims_df['claim'].apply(
         lambda x: any(keyword.lower() in x.lower() for keyword in anti_trump_keywords)
     )
     
-    claims_df['left_leaning'] = claims_df['claim'].apply(
-        lambda x: any(keyword.lower() in x.lower() for keyword in left_keywords)
+    # Apply the sentiment analysis function
+    claims_df['sentiment'] = claims_df['claim'].apply(
+        lambda x: analyze_claim_sentiment(x, left_keywords, right_keywords)
     )
     
-    claims_df['right_leaning'] = claims_df['claim'].apply(
-        lambda x: any(keyword.lower() in x.lower() for keyword in right_keywords)
-    )
+    claims_df['left_leaning'] = claims_df['sentiment'] == 'left'
+    claims_df['right_leaning'] = claims_df['sentiment'] == 'right'
     
     # Extract anti-Trump claims
     anti_trump_claims = claims_df[claims_df['anti_trump']].sort_values('count', ascending=False)
@@ -132,6 +163,20 @@ def main():
     print(f"Left-leaning mentions: {left_mentions} ({left_mentions/total_mentions*100:.2f}%)")
     print(f"Right-leaning mentions: {right_mentions} ({right_mentions/total_mentions*100:.2f}%)")
     print(f"Ambiguous mentions: {ambiguous_mentions} ({ambiguous_mentions/total_mentions*100:.2f}%)")
+    
+    # Check for potentially misclassified claims
+    print("\nPotentially misclassified claims (checking for anti-abortion and anti-LGBT claims):")
+    potential_misclassified = claims_df[
+        (claims_df['claim'].str.contains('against abortion|against lgbt|against gay|against transgender', 
+                                        case=False, regex=True)) & 
+        (claims_df['left_leaning'])
+    ]
+    
+    if len(potential_misclassified) > 0:
+        for i, (claim, count) in enumerate(zip(potential_misclassified['claim'], potential_misclassified['count'])):
+            print(f"{i+1}. {claim}: {count} (classified as left-leaning but may be right-leaning)")
+    else:
+        print("No potentially misclassified claims found.")
 
 if __name__ == "__main__":
     main()
