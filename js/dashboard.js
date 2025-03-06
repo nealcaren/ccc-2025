@@ -1,6 +1,8 @@
 // Function to fetch JSON data
 async function fetchData(url) {
-    const response = await fetch(url);
+    // Add a timestamp to prevent caching issues on GitHub Pages
+    const cacheBuster = `?t=${new Date().getTime()}`;
+    const response = await fetch(url + cacheBuster);
     return response.json();
 }
 
