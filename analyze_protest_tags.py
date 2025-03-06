@@ -10,7 +10,7 @@ def main():
 
     # Define tag categories and their keywords
     tag_categories = {
-        'Gaza': ['gaza', 'palestinian', 'palestine', 'ceasefire', 'genocide'],
+        'Gaza': ['gaza', 'palestinian', 'palestine', 'israel'],
         'Abortion': ['abortion', 'reproductive rights', 'pro-choice', 'women\'s rights'],
         'LGBT+': ['lgbt', 'lgbtq', 'gay', 'trans', 'transgender', 'queer'],
         'Environment': ['climate', 'environment', 'green', 'fossil fuel', 'pollution'],
@@ -28,10 +28,22 @@ def main():
         df[f'tag_{tag.lower().replace("+", "plus").replace(" ", "_")}'] = 0
 
     # Function to check if a claim contains any of the keywords for a tag
-    def check_tag_keywords(claim_text, keywords):
+    def check_tag_keywords(claim_text, keywords, tag_name=None):
         if not isinstance(claim_text, str):
             return 0
+        
         claim_lower = claim_text.lower()
+        
+        # Special handling for Gaza tag - exclude generic anti-war claims
+        if tag_name == 'Gaza':
+            # Only include claims that specifically mention Israel, Gaza, or Palestine
+            # Exclude generic claims like "against all wars" or just "ceasefire" without context
+            if ('gaza' in claim_lower or 'palestinian' in claim_lower or 
+                'palestine' in claim_lower or 'israel' in claim_lower):
+                return 1
+            return 0
+        
+        # Standard keyword check for other tags
         return 1 if any(keyword.lower() in claim_lower for keyword in keywords) else 0
 
     # Function to check if a target contains any of the keywords for a tag
@@ -47,7 +59,7 @@ def main():
         tag_col = f'tag_{tag.lower().replace("+", "plus").replace(" ", "_")}'
         
         # Check claims
-        df[tag_col] = df['claims_summary'].apply(lambda x: check_tag_keywords(x, keywords))
+        df[tag_col] = df['claims_summary'].apply(lambda x: check_tag_keywords(x, keywords, tag_name=tag))
         
         # For Trump and Musk, also check targets
         if tag in ['Trump', 'Musk']:
