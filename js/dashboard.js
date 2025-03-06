@@ -484,125 +484,12 @@ async function loadSizeTimeChart() {
     }
 }
 
-// Load and display protest tags chart
-async function loadProtestTagsChart() {
-    try {
-        const tagsData = await fetchData('data/protest_tags.json');
-        
-        // Create chart
-        const ctx = document.getElementById('protestTagsChart').getContext('2d');
-        let protestTagsChart;
-        
-        // Function to create or update the chart
-        const updateChart = (byParticipants = false) => {
-            const data = byParticipants ? tagsData.percentagesByParticipants : tagsData.percentages;
-            const counts = byParticipants ? tagsData.participantCounts : tagsData.counts;
-            const label = byParticipants ? 'Percentage of Participants' : 'Percentage of Events';
-            const tooltipLabel = byParticipants ? 'participants' : 'events';
-            
-            // Create arrays for sorting while preserving color mapping
-            const sortedIndices = Array.from(Array(tagsData.tags.length).keys())
-                .sort((a, b) => (byParticipants ? 
-                    tagsData.percentagesByParticipants[b] - tagsData.percentagesByParticipants[a] : 
-                    tagsData.percentages[b] - tagsData.percentages[a]));
-            
-            const sortedLabels = sortedIndices.map(i => tagsData.tags[i]);
-            const sortedData = sortedIndices.map(i => data[i]);
-            const sortedCounts = sortedIndices.map(i => counts[i]);
-            
-            // Original color array to maintain consistent colors
-            const colorArray = [
-                'rgba(255, 99, 132, 0.7)',
-                'rgba(54, 162, 235, 0.7)',
-                'rgba(255, 206, 86, 0.7)',
-                'rgba(75, 192, 192, 0.7)',
-                'rgba(153, 102, 255, 0.7)',
-                'rgba(255, 159, 64, 0.7)',
-                'rgba(199, 199, 199, 0.7)',
-                'rgba(83, 102, 255, 0.7)',
-                'rgba(40, 159, 64, 0.7)',
-                'rgba(210, 199, 199, 0.7)',
-                'rgba(255, 99, 132, 0.7)'
-            ];
-            
-            // Map the original colors to the sorted indices
-            const sortedColors = sortedIndices.map(i => colorArray[i % colorArray.length]);
-            
-            // If chart exists, destroy it first
-            if (protestTagsChart) {
-                protestTagsChart.destroy();
-            }
-            
-            // Create new chart
-            protestTagsChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: sortedLabels,
-                    datasets: [{
-                        label: label,
-                        data: sortedData,
-                        backgroundColor: sortedColors,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.dataset.label || '';
-                                    const value = context.raw.toFixed(2) + '%';
-                                    const count = sortedCounts[context.dataIndex];
-                                    return `${label}: ${value} (${count} ${tooltipLabel})`;
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: label
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Tag'
-                            }
-                        }
-                    }
-                }
-            });
-        };
-        
-        // Initial chart creation
-        updateChart(false);
-        
-        // Add event listener to the switch
-        const viewSwitch = document.getElementById('protestTagsViewSwitch');
-        if (viewSwitch) {
-            viewSwitch.addEventListener('change', function() {
-                updateChart(this.checked);
-            });
-        }
-    } catch (error) {
-        console.error('Error loading protest tags chart:', error);
-    }
-}
 
 // Load and display protest issues chart in the summary section
 async function loadProtestIssuesChart() {
     try {
-        const tagsData = await fetchData('data/protest_tags.json');
+        // Use the updated protest_issues_summary.json file instead of protest_tags.json
+        const tagsData = await fetchData('data/protest_issues_summary.json');
         
         // Create chart
         const ctx = document.getElementById('protestIssuesChart');
@@ -710,8 +597,8 @@ async function loadProtestIssuesChart() {
         // Initial chart creation
         updateChart(false);
         
-        // Add event listener to the switch in the main section to also update this chart
-        const viewSwitch = document.getElementById('protestTagsViewSwitch');
+        // Add event listener to the switch
+        const viewSwitch = document.getElementById('protestIssuesViewSwitch');
         if (viewSwitch) {
             viewSwitch.addEventListener('change', function() {
                 updateChart(this.checked);
@@ -731,7 +618,6 @@ async function initDashboard() {
             loadSizeTimeChart(),
             loadStatesChart(),
             loadTacticsAnalysisChart(),
-            loadProtestTagsChart(),
             loadEventsTable()
         ]);
     } catch (error) {
