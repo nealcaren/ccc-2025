@@ -5,7 +5,7 @@ This dashboard visualizes left-leaning protest event data from the CCC Phase 3 d
 ## GitHub Pages Deployment
 
 This repository is configured to automatically deploy to GitHub Pages. You can view the live dashboard at:
-https://[your-username].github.io/[repository-name]/
+https://nealcaren.github.io/ccc-2025/
 
 To set up GitHub Pages for this repository:
 
