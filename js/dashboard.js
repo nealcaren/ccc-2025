@@ -103,28 +103,12 @@ async function loadSummaryStats() {
 // Load and display events by day chart with toggle for events/participants
 async function loadEventsChart() {
     try {
-        const dateCounts = await fetchData('data/date_counts.json');
-        const events = await fetchData('data/events_table.json');
+        const dateData = await fetchData('data/date_counts.json');
         
         // Prepare data for Chart.js
-        const dates = Object.keys(dateCounts).sort();
-        const eventCounts = dates.map(date => dateCounts[date]);
-        
-        // Calculate participants by date
-        const participantsByDate = {};
-        events.forEach(event => {
-            if (!participantsByDate[event.date]) {
-                participantsByDate[event.date] = 0;
-            }
-            // Use size_mean if available, otherwise use a default value
-            const size = event.size_mean ? parseFloat(event.size_mean) : 11;
-            participantsByDate[event.date] += size;
-        });
-        
-        // Get participant counts for each date in our sorted dates array
-        const participantCounts = dates.map(date => 
-            participantsByDate[date] ? Math.round(participantsByDate[date]) : 0
-        );
+        const dates = Object.keys(dateData.counts).sort();
+        const eventCounts = dates.map(date => dateData.counts[date]);
+        const participantCounts = dates.map(date => dateData.participants[date] || 0);
         
         // Create chart
         const ctx = document.getElementById('eventsChart').getContext('2d');

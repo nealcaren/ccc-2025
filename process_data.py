@@ -22,14 +22,27 @@ def main():
         df = pd.read_csv('ccc-phase3-left.csv', encoding='latin1')
         print(f"Loaded {len(df)} left-leaning events from CSV (untagged)")
 
-    # 1. Generate events by day count
-    print("Generating events by day count...")
+    # 1. Generate events by day count and participants by day
+    print("Generating events by day count and participants by day...")
     date_counts = df['date'].value_counts().sort_index().to_dict()
-
-    # Save date counts to JSON for the chart
+    
+    # Calculate participants by date
+    # Fill missing size values with 11 (default size)
+    df['size_for_calc'] = df['size_mean'].fillna(11)
+    
+    # Group by date and sum the sizes
+    participants_by_date = df.groupby('date')['size_for_calc'].sum().round().astype(int).to_dict()
+    
+    # Create a combined dictionary with both counts and participants
+    date_data = {
+        'counts': date_counts,
+        'participants': participants_by_date
+    }
+    
+    # Save date data to JSON for the chart
     with open('data/date_counts.json', 'w') as f:
-        json.dump(date_counts, f)
-    print(f"Saved date counts for {len(date_counts)} days")
+        json.dump(date_data, f)
+    print(f"Saved date counts and participant counts for {len(date_counts)} days")
 
     # 2. Create a table of events with key fields
     print("Creating events table...")
