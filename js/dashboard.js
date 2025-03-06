@@ -487,6 +487,78 @@ async function loadSizeTimeChart() {
     }
 }
 
+// Load and display protest tags chart
+async function loadProtestTagsChart() {
+    try {
+        const tagsData = await fetchData('data/protest_tags.json');
+        
+        // Create chart
+        const ctx = document.getElementById('protestTagsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: tagsData.tags,
+                datasets: [{
+                    label: 'Percentage of Protests',
+                    data: tagsData.percentages,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)',
+                        'rgba(199, 199, 199, 0.7)',
+                        'rgba(83, 102, 255, 0.7)',
+                        'rgba(40, 159, 64, 0.7)',
+                        'rgba(210, 199, 199, 0.7)',
+                        'rgba(255, 99, 132, 0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.raw.toFixed(2) + '%';
+                                const count = tagsData.counts[context.dataIndex];
+                                return `${label}: ${value} (${count} protests)`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage of Protests'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Tag'
+                        }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error loading protest tags chart:', error);
+    }
+}
+
 // Initialize the dashboard
 async function initDashboard() {
     try {
@@ -496,6 +568,7 @@ async function initDashboard() {
             loadSizeTimeChart(),
             loadStatesChart(),
             loadTacticsAnalysisChart(),
+            loadProtestTagsChart(),
             loadEventsTable()
         ]);
     } catch (error) {

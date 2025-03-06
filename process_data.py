@@ -14,9 +14,13 @@ def main():
         dataset_details = json.load(f)
 
     print("Loading CSV data...")
-    # Load the filtered left-leaning protests data with Latin encoding
-    df = pd.read_csv('ccc-phase3-left.csv', encoding='latin1')
-    print(f"Loaded {len(df)} left-leaning events from CSV")
+    # Load the tagged left-leaning protests data with Latin encoding
+    if Path('ccc-phase3-left-tagged.csv').exists():
+        df = pd.read_csv('ccc-phase3-left-tagged.csv', encoding='latin1')
+        print(f"Loaded {len(df)} tagged left-leaning events from CSV")
+    else:
+        df = pd.read_csv('ccc-phase3-left.csv', encoding='latin1')
+        print(f"Loaded {len(df)} left-leaning events from CSV (untagged)")
 
     # 1. Generate events by day count
     print("Generating events by day count...")
