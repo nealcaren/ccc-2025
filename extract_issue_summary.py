@@ -137,11 +137,16 @@ def main():
         detailed_df.to_csv(output_file, index=False)
         print(f"Saved detailed claims by issue to {output_file}")
         
-        # Create a simplified version with just unique claims and their counts (no issue tags)
-        simplified_df = pd.DataFrame({
-            'Claim': list(claim_counts.keys()),
-            'Claim Count': list(claim_counts.values())
-        }).sort_values('Claim Count', ascending=False)
+        # Create a simplified version with claims, counts, and their issues
+        simplified_data = []
+        for claim, tags in claim_to_tags.items():
+            simplified_data.append({
+                'Claim': claim,
+                'Claim Count': claim_counts.get(claim, 0),
+                'Issues': ', '.join(sorted(tags))  # Join all issues for this claim
+            })
+        
+        simplified_df = pd.DataFrame(simplified_data).sort_values('Claim Count', ascending=False)
         
         simplified_output_file = 'data/claims_issue_check.csv'
         simplified_df.to_csv(simplified_output_file, index=False)
