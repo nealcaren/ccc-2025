@@ -99,31 +99,35 @@ def main():
         # Create a dictionary to count claim occurrences
         claim_counts = claims_df['claim'].value_counts().to_dict()
         
-        # Create a list to store detailed claims data
-        detailed_claims = []
+        # Group claims by their text to identify which tags actually apply to each unique claim
+        claim_to_tags = {}
         
-        # Process each claim
+        # Process each claim and collect its tags
         for _, row in claims_df.iterrows():
             claim = row['claim']
             
             # Skip NaN claims
             if pd.isna(claim):
                 continue
-                
-            # Check which issues this claim is tagged with
-            claim_issues = []
+            
+            # Initialize the claim's tag set if not already present
+            if claim not in claim_to_tags:
+                claim_to_tags[claim] = set()
+            
+            # Add all tags that apply to this claim instance
             for tag_name in [col for col in claims_df.columns if col != 'claim']:
                 if row[tag_name] == 1:
-                    claim_issues.append(tag_name)
-            
-            # Only add the claim with its actual tagged issues
-            if claim_issues:
-                for issue in claim_issues:
-                    detailed_claims.append({
-                        'Claim': claim,
-                        'Claim Count': claim_counts.get(claim, 0),
-                        'Issue': issue
-                    })
+                    claim_to_tags[claim].add(tag_name)
+        
+        # Create detailed claims data
+        detailed_claims = []
+        for claim, tags in claim_to_tags.items():
+            for tag in tags:
+                detailed_claims.append({
+                    'Claim': claim,
+                    'Claim Count': claim_counts.get(claim, 0),
+                    'Issue': tag
+                })
         
         # Convert to DataFrame and remove duplicates
         detailed_df = pd.DataFrame(detailed_claims).drop_duplicates()
@@ -133,9 +137,14 @@ def main():
         detailed_df.to_csv(output_file, index=False)
         print(f"Saved detailed claims by issue to {output_file}")
         
-        # Also create a simplified version with just claim, count, and issue
+        # Create a simplified version with just unique claims and their counts (no issue tags)
+        simplified_df = pd.DataFrame({
+            'Claim': list(claim_counts.keys()),
+            'Claim Count': list(claim_counts.values())
+        }).sort_values('Claim Count', ascending=False)
+        
         simplified_output_file = 'data/claims_issue_check.csv'
-        detailed_df.to_csv(simplified_output_file, index=False)
+        simplified_df.to_csv(simplified_output_file, index=False)
         print(f"Saved simplified claims data to {simplified_output_file}")
     else:
         print(f"Warning: {claims_with_tags_file} not found. Run extract_claims_with_tags.py first to generate detailed claims data.")
