@@ -22,8 +22,10 @@ def main():
     
     # Process each tag
     for tag_col in tag_columns:
-        # Convert tag_gaza to Gaza
+        # Convert tag_gaza to Gaza, and tag_musk to Musk/DOGE
         tag_name = tag_col[4:].replace('_', ' ').title().replace('Lgbt', 'LGBT').replace('Lgbtplus', 'LGBT+')
+        if tag_name == 'Musk':
+            tag_name = 'Musk/DOGE'
         
         # Count events with this tag
         event_count = df[tag_col].sum()
@@ -49,8 +51,8 @@ def main():
             keywords = ['immigration', 'immigrant', 'ICE', 'border', 'migrant', 'refugee', 'asylum', 'deportation']
         elif tag_name == 'Trump':
             keywords = ['trump', 'president trump', 'donald trump']
-        elif tag_name == 'Musk':
-            keywords = ['musk', 'elon musk']
+        elif tag_name == 'Musk/DOGE':
+            keywords = ['musk', 'elon musk', 'federal budget', 'budget cuts', 'doge']
         elif tag_name == 'Gun Control':
             keywords = ['gun', 'firearm', 'nra', 'second amendment']
         elif tag_name == 'Healthcare':
@@ -117,13 +119,38 @@ def main():
             # Initialize this claim in our mapping if needed
             if claim not in claim_to_issues:
                 claim_to_issues[claim] = set()
-                
-            # Add the actual tags for this event
+            
+            # Get all tags for this event
+            event_tags = set()
             for tag_col in tag_columns:
                 if event[tag_col] == 1:
                     # Convert tag column name to readable issue name
                     issue_name = tag_col[4:].replace('_', ' ').title().replace('Lgbt', 'LGBT').replace('Lgbtplus', 'LGBT+')
-                    claim_to_issues[claim].add(issue_name)
+                    if issue_name == 'Musk':
+                        issue_name = 'Musk/DOGE'
+                    event_tags.add(issue_name)
+            
+            # Check for federal budget cuts or Musk mentions to add Musk/DOGE tag
+            target = str(event.get('target', '')).lower()
+            claim_lower = str(claim).lower()
+            
+            if ('federal budget' in target or 'budget cut' in target or 
+                'federal budget' in claim_lower or 'budget cut' in claim_lower or
+                'musk' in target or 'musk' in claim_lower) and 'Musk/DOGE' not in event_tags:
+                event_tags.add('Musk/DOGE')
+            
+            # Special handling for Trump tag
+            if 'Trump' in event_tags:
+                # Check if Trump is the only tag or if Trump is specifically mentioned in claim or target
+                target = str(event.get('target', '')).lower()
+                claim_lower = str(claim).lower()
+                
+                # If there are other tags and Trump isn't specifically the target or in claim, remove Trump tag
+                if len(event_tags) > 1 and 'trump' not in target.lower() and 'trump' not in claim_lower:
+                    event_tags.remove('Trump')
+            
+            # Add all remaining tags to this claim
+            claim_to_issues[claim].update(event_tags)
         
         # Create detailed claims data
         detailed_claims = []
