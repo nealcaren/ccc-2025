@@ -1,0 +1,41 @@
+claim,count,anti_trump,sentiment,left_leaning,right_leaning
+in solidarity with Israel,181,False,right,False,True
+against abortion,34,False,right,False,True
+against anti-LGBTQ+ bigotry,5,False,right,False,True
+for free speech,2,False,right,False,True
+against LGBTQ+ rights,1,False,right,False,True
+against pro-Israel demonstration,1,False,right,False,True
+against Senate Bill 1 to ban transgender girls and women from participating in female sports at publicly funded institutions,1,False,right,False,True
+against amendment to state constitution that would codify right to abortion access,1,False,right,False,True
+against President Trump's executive orders attacking transgender people,1,True,right,False,True
+against attacks on LGBTQ+ people,1,False,right,False,True
+against antisemitism,1,False,right,False,True
+against transgenderism,1,False,right,False,True
+against anti-abortion demonstrations,1,False,right,False,True
+against idea of transgender children,1,False,right,False,True
+for Second Amendment rights,1,False,right,False,True
+against attacks on migrants and workers and women and LGBTQIA+ people,1,False,right,False,True
+against misinformation about abortion,1,False,right,False,True
+against state senator Tim Grayson's support for abortion access,1,False,right,False,True
+for legislature that supports pro-life,1,False,right,False,True
+against anti-abortion demonstration,1,False,right,False,True
+against Building Bridges event at Stony Brook University featuring only pro-Israel speakers,1,False,right,False,True
+against violation of free speech,1,False,right,False,True
+against Huntington Beach City Council displaying a MAGA plaque at a public library,1,False,right,False,True
+against the deletion of âTransgenderâ on Stonewall National Monument website,1,False,right,False,True
+for free speech and freedom of the press,1,False,right,False,True
+"against the MSU board and president ignoring student concerns, for accountability from elected university officials, against the lack of transparency in decision-making, for divestment and ethical financial practices, against policies that harm marginalized students, for protecting international and transgender students from discriminatory policies",1,False,right,False,True
+against President Trump and the MAGA agenda,1,True,right,False,True
+against state and federal actions targeting LGBTQ+ people,1,False,right,False,True
+"against anti-LGBTQ+ legislation, for protecting immigrant rights, against criminalizing the unhoused, for human dignity and civil rights, against Senate Bill 484 restricting aid to the unhoused, for municipalitiesâ rights to care for vulnerable populations, against fear-based policymaking, for love and inclusivity in governance",1,False,right,False,True
+against gender ideology,1,False,right,False,True
+against gender-affirming health care for minors,1,False,right,False,True
+against NYU Langone Hospital's compliance with President Trump's executive order banning gender-affirming health care for transgender youth,1,False,right,False,True
+against anti-LGBTQ+ attacks,1,False,right,False,True
+against MAGA movement,1,False,right,False,True
+against city council hanging sign with MAGA acronym,1,False,right,False,True
+"against economic inequality and oligarchy, for fighting for working families, against rising costs of housing, healthcare, food, childcare, and college, for LGBTQ and women's rights, against massive tax breaks for the wealthy, against cuts to Medicaid and other essential programs, for federal funding to support working-class people, for addressing climate change",1,False,right,False,True
+for preserving the parental rights-focused Initiative 2081,1,False,right,False,True
+"for reproductive rights and gender-affirming care, against government overreach into healthcare decisions, for protections and dignity for LGBTQ+ individuals, against transphobic executive orders and rollbacks of civil rights, for bodily autonomy and the right to make personal medical decisions, against discrimination in education, sports, and public spaces, for inclusive and supportive communities for trans and nonbinary youth, against policies that increase mental health struggles and suicide risk among marginalized groups",1,False,right,False,True
+against abortion rights,1,False,right,False,True
+against anti-LGBTQ legislation,1,False,right,False,True

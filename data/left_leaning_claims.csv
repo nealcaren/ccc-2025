@@ -1,0 +1,624 @@
+claim,count,anti_trump,sentiment,left_leaning,right_leaning
+for Palestinian liberation,1541,False,left,True,False
+against genocide in Gaza,655,False,left,True,False
+for climate action,374,False,left,True,False
+for LGBTQ+ rights,347,False,left,True,False
+for immigrants' rights,344,False,left,True,False
+for women's rights,343,False,left,True,False
+for reproductive rights,324,False,left,True,False
+against gun violence,303,False,left,True,False
+for ceasefire in Gaza,301,False,left,True,False
+for democracy,225,False,left,True,False
+against police brutality,156,False,left,True,False
+against ICE raids and immigrant deportations,135,False,left,True,False
+for immigrant rights,82,False,left,True,False
+for abolishing ICE,71,False,left,True,False
+for permanent ceasefire in Gaza,70,False,left,True,False
+for justice for jailed or imprisoned J6 participants,68,False,left,True,False
+for environmental justice,64,False,left,True,False
+for workers' rights,64,False,left,True,False
+against immigrant deportations,52,False,left,True,False
+against immigrant deportations and family separations,51,False,left,True,False
+for immediate and permanent ceasefire in Gaza,45,False,left,True,False
+for police accountability,45,False,left,True,False
+against ICE raids,43,False,left,True,False
+for humanitarian aid to Gaza,21,False,left,True,False
+for ending Israel's occupation of Palestine,21,False,left,True,False
+for lifting Israel's siege on Gaza,21,False,left,True,False
+for racial justice,20,False,left,True,False
+against genocide and occupation,20,False,left,True,False
+in remembrance of Palestinians killed in Gaza,19,False,left,True,False
+for environmental conservation,19,False,left,True,False
+for climate justice,17,False,left,True,False
+against ICE,16,False,left,True,False
+against police violence,16,False,left,True,False
+against Chevron's complicity in genocide in Gaza,16,False,left,True,False
+for Indigenous peoples' rights,14,False,left,True,False
+for accountability for war crimes in Gaza,14,False,left,True,False
+against genocide and displacement in Gaza,14,False,left,True,False
+for peace and justice,14,False,left,True,False
+in solidarity with healthcare workers and hospitals in Gaza,13,False,left,True,False
+against genocide,13,False,left,True,False
+for trans rights,12,False,left,True,False
+for gun control,12,False,left,True,False
+Palestinian liberation,11,False,left,True,False
+against Israel's attacks on hospitals and healthcare workers in Gaza,11,False,left,True,False
+in remembrance of Palestinian children killed in Gaza,11,False,left,True,False
+against L3Harris's complicity in genocide in Gaza,11,False,left,True,False
+against President Trump's recent de-funding of several public service institutions,11,True,left,True,False
+against inequality,11,False,left,True,False
+for a ceasefire in Israel and Palestine,10,False,left,True,False
+for a ceasefire in Gaza,10,False,left,True,False
+for ceasefire in Israel/Palestine,10,False,left,True,False
+against Israel's war on Gaza and Lebanon,10,False,left,True,False
+for peace through justice in Hawai'i and around the world,10,False,left,True,False
+in support of refugees,10,False,left,True,False
+for humanitarian and medical aid to Gaza,10,False,left,True,False
+for peace and justice in Gaza and everywhere,10,False,left,True,False
+for justice for the Marlin dogs,10,False,left,True,False
+for ending gun violence,10,False,left,True,False
+for justice for Jimmy Lopez,10,False,left,True,False
+for protecting the environment from unchecked climate change,10,False,left,True,False
+for justice for Tyrone West and all victims of police brutality,10,False,left,True,False
+for permanent ceasefire in Gaza and West Bank,10,False,left,True,False
+in solidarity with the Black Lives Matter movement,10,False,left,True,False
+against war and injustice,10,False,left,True,False
+for gender justice,10,False,left,True,False
+for peace and justice in a nuclear-free world,10,False,left,True,False
+for bilateral ceasefire in Gaza,10,False,left,True,False
+against Israel's destruction of the healthcare system in Gaza,10,False,left,True,False
+against police violence and corruption,10,False,left,True,False
+against the suffering of families and children in Gaza,10,False,left,True,False
+for dropping charges against pro-Palestine student protesters arrested at Arizona State University,10,False,left,True,False
+for abolishing police associations,10,False,left,True,False
+against starvation in Gaza,10,False,left,True,False
+for ceasefire in Ukraine,10,False,left,True,False
+for immediate ceasefire in Gaza,10,False,left,True,False
+against U.S. support for Israel's attack on Gaza,10,False,left,True,False
+for peace in Gaza,10,False,left,True,False
+for Indigenous peoples' solidarity,10,False,left,True,False
+for ending Israel's siege on Gaza and settler violence in the West Bank,10,False,left,True,False
+for freeing all Israeli and Palestinian prisoners and hostages,10,False,left,True,False
+for equal justice for all,10,False,left,True,False
+for justice and equality and freedom for Israelis and Palestinians,10,False,left,True,False
+for freeing all abducted Palestinian healthcare workers,9,False,left,True,False
+against immigrants' deportation and family separation,9,False,left,True,False
+for transgender rights,9,False,left,True,False
+for transgender peoples' rights,9,False,left,True,False
+for humanitarian assistance to Palestinians,9,False,left,True,False
+in celebration of ceasefire in Gaza,8,False,left,True,False
+against deportations,7,False,left,True,False
+against President Trump's immigration policies,7,True,left,True,False
+against President Trump and Elon Musk's cooptation of U.S. Office of Personnel Management,6,True,left,True,False
+for a fair contract for Costco workers,6,False,left,True,False
+in support of federal workers,6,False,left,True,False
+for permanent and unconditional ceasefire in Gaza,6,False,left,True,False
+for justice for Robert Brooks,5,False,left,True,False
+against immigrant deportation,5,False,left,True,False
+for environmental protection,5,False,left,True,False
+for LGBTQ rights,5,False,left,True,False
+for abortion rights,5,False,left,True,False
+against Donald Trump's immigration policies,5,True,left,True,False
+against U.S. Secretary of State Anthony Blinken's complicity in genocide in Gaza,4,False,left,True,False
+for immigration rights,4,False,left,True,False
+against deaths in police custody,4,False,left,True,False
+against pro-Palestine demonstration,4,False,left,True,False
+in support of Donald Trump's immigration policies,4,False,left,True,False
+"for social, economic, and environmental justice",4,False,left,True,False
+against intimidation of migrant workers by Customs and Border Patrol,4,False,left,True,False
+in remembrance of Hind Rajab and other Palestinian children killed in Gaza,4,False,left,True,False
+against police abuse of power,4,False,left,True,False
+for justice for Doug Harless,4,False,left,True,False
+for immigration reform,4,False,left,True,False
+against arrests and deportations of migrant workers,4,False,left,True,False
+against ICE and mass deportations,4,False,left,True,False
+for Indigenous sovereignty,3,False,left,True,False
+against ICE deportations,3,False,left,True,False
+against pro-immigrants demonstration,3,False,left,True,False
+for justice for Hadi Abuatela,3,False,left,True,False
+for wealth equality,3,False,left,True,False
+against pro-Palestine rally,3,False,left,True,False
+against immigrant deportations and family separation,3,False,left,True,False
+for racial equality,3,False,left,True,False
+for justice for Murod Kurdi,3,False,left,True,False
+for justice,3,False,left,True,False
+for accountability for Israel's war crimes in Gaza,3,False,left,True,False
+against inhumane detention practices,3,False,left,True,False
+in remembrance of victims of Sandy Hook Elementary School mass shooting and other instances of gun violence,3,False,left,True,False
+in solidarity with Palestinian birdwatchers,3,False,left,True,False
+for compassionate immigration reform,3,False,left,True,False
+for justice and respect for immigrants,3,False,left,True,False
+for higher pay for corrections officers,3,False,left,True,False
+against immigrant deportations and ICE raids,3,False,left,True,False
+for Palestinians' right of return,3,False,left,True,False
+against construction of police training centers,3,False,left,True,False
+against state legislation that would criminalize pro-Palestinian activism,3,False,left,True,False
+for protection for immigrants,3,False,left,True,False
+"against widespread federal employee terminations, against unexpected firings without justification, against layoffs affecting public service workers, against termination of experienced federal employees, against loss of consumer protection attorneys, against negative impact on local economies, for appealing illegal firings, for speaking to lawmakers for support, for rallying federal employees to fight job cuts, against va layoffs affecting veterans' care, for urging congress to intervene, for organizing future protests",2,False,left,True,False
+against the Trump administration's immigration policies,2,False,left,True,False
+"against Donald Trumpâs immigration policies targeting undocumented immigrants, for the right of students to protest in solidarity with their families, against deportations breaking up hardworking families, for keeping parents and children together regardless of immigration status, against policies that instill fear in Hispanic communities, for recognizing the contributions of immigrants to American society, against government actions that criminalize people seeking a better life, for students standing up for their uncles fathers and friends, against the pain of forced family separations, for young people using their voices to advocate for justice, against ICE orders that disproportionately affect Latino families",2,True,left,True,False
+for justice for Cornelius Taylor,2,False,left,True,False
+in support of President Trump's immigration policies,2,False,left,True,False
+against the Democratic Party's failure to act to mitigate climate change,2,False,left,True,False
+for community control over police,2,False,left,True,False
+"against forced return-to-office mandates, for remote work flexibility in federal jobs, against buyouts forcing government employees out, for protecting virtual work opportunities in public service, against executive orders eliminating telework, for workplace stability in government agencies, against Trump administration job cuts, for federal employees' rights to job security, against disruptions to Commerce Department employment",2,True,left,True,False
+for higher pay for union workers at University of California Los Angeles,2,False,left,True,False
+for access to healthcare,2,False,left,True,False
+against deportations of immigrants,2,False,left,True,False
+against federal immigration raids,2,False,left,True,False
+for Women's rights,2,False,left,True,False
+against US having ceasefire talks with Russia without Ukraine,2,False,left,True,False
+for democracy and human rights in Iran,2,False,left,True,False
+against ICE and immigrant deportations,2,False,left,True,False
+for community control of police,2,False,left,True,False
+against Lockheed Martin's complicity in genocide in Gaza,2,False,left,True,False
+"against Trumpâs mass deportations, for students' right to protest policies that harm their families, against ICE raids disrupting communities, for keeping families together, against the fear instilled in undocumented families, for young people standing up for justice, against policies that criminalize immigrants seeking better lives, for student activism in defense of their friends and loved ones, against a system that dehumanizes migrants, for constructive dialogue about immigration policies, against the increased enforcement tearing apart communities",2,True,left,True,False
+against Israel's attacks on Kamal Adwan Hospital and all healthcare workers in Gaza,2,False,left,True,False
+for access to abortion,2,False,left,True,False
+against police brutality and state violence,2,False,left,True,False
+for healthcare,2,False,left,True,False
+against immigration,2,False,left,True,False
+for immigrants rights,2,False,left,True,False
+for more funding for social services,2,False,left,True,False
+for protections for immigrants,2,False,left,True,False
+for equality,2,False,left,True,False
+for LGBTQIA rights,2,False,left,True,False
+against pro-Palestinian protesters,2,False,left,True,False
+against immigrant deportations and family deportations,2,False,left,True,False
+against anti-ICE demonstration,2,False,left,True,False
+against federal legislation that would facilitate immigrant deportations,2,False,left,True,False
+against mass deportations of immigrants,2,False,left,True,False
+against police entering the wrong home during operations,1,False,left,True,False
+against the lack of answers and justice for Harlessâ family,1,False,left,True,False
+for thorough investigations into police shootings,1,False,left,True,False
+for ending gun violence in the Bronx,1,False,left,True,False
+against police silence and lack of communication with the community,1,False,left,True,False
+for justice for Douglas Harless,1,False,left,True,False
+against the use of excessive force by police,1,False,left,True,False
+against police actions leading to the unnecessary loss of innocent lives,1,False,left,True,False
+against Israel's attacks on Kamal Adwan Hospital and other healthcare facilities and healthcare workers in Gaza,1,False,left,True,False
+for the defunding of Indiana University,1,False,left,True,False
+for the defunding of the Kinsey Institute,1,False,left,True,False
+for peaceful protests to raise awareness and demand justice,1,False,left,True,False
+for freeing Dr. Hussam Abu Safiya and all abducted Palestinian healthcare workers,1,False,left,True,False
+for community unity in addressing police misconduct,1,False,left,True,False
+against scholasticide in Gaza,1,False,left,True,False
+for public statement by American Historical Association condemning scholasticide in Gaza,1,False,left,True,False
+for more city funding for affordable housing and health services,1,False,left,True,False
+against proposed funding for new Durham County Sheriff's Office facility,1,False,left,True,False
+for justice for Robert Brooks and all lives stolen by police brutality and incarceration,1,False,left,True,False
+for expansion of access to healthcare,1,False,left,True,False
+against the U.S. news media's complicity in ongoing genocide in Gaza,1,False,left,True,False
+against Israel's destruction of healthcare facilities in Gaza,1,False,left,True,False
+for passage of city council resolution calling for ceasefire and humanitarian aid in Gaza,1,False,left,True,False
+for release of all Palestinian and Israeli hostages and prisoners including doctors and medical workers,1,False,left,True,False
+for affordable healthcare,1,False,left,True,False
+against Israel's killings of journalists in Gaza,1,False,left,True,False
+against racial disparities in criminal justice,1,False,left,True,False
+for CARE for Immigrant Families Act,1,False,left,True,False
+for passage of state legislation that would stop law enforcement from working with ICE and Border Patrol,1,False,left,True,False
+for a new 5 year contract for 700 hospitality workers,1,False,left,True,False
+for wage increases for union workers,1,False,left,True,False
+for more affordable healthcare for union workers,1,False,left,True,False
+for justice for Jebrell Conley and all victims of police brutality,1,False,left,True,False
+against cuts to city budgets for essential services,1,False,left,True,False
+against rollbacks to police and jail reforms,1,False,left,True,False
+against anti-immigrant rhetoric,1,False,left,True,False
+for higher pay for New York Police Department sergeants,1,False,left,True,False
+for passage of city council resolution in support of Atlantic Mills Tenants Union,1,False,left,True,False
+against Congressman Vicente Gonzalez vote in favor of the Laken Riley Act,1,False,left,True,False
+against privatization of health insurance benefits for retired municipal workers,1,False,left,True,False
+for a fair contract for New Haven Public Schools cafeteria workers,1,False,left,True,False
+for protections for state workers,1,False,left,True,False
+immigrants are welcome here,1,False,left,True,False
+against collaboration between the Chicago Police and Immigration and Customs Enforcement,1,False,left,True,False
+against Citibank's complicity in genocide in Gaza,1,False,left,True,False
+against Boomerang Design's complicity in design and construction of Cop City police training centers in Charlotte and elsewhere,1,False,left,True,False
+for justice and transparency for a Black Allentown City Hall employee who found a noose on her desk,1,False,left,True,False
+against Donald Trump's planned deportations of immigrants,1,True,left,True,False
+in solidarity with families and children in Gaza,1,False,left,True,False
+against climate change,1,False,left,True,False
+against increased harassment and racial discrimination of local youth and unhoused people by police,1,False,left,True,False
+against Customs and Border Patrol raids on migrant workers,1,False,left,True,False
+against immigrant detention and deportations,1,False,left,True,False
+against Israel's bombing in Palestine and Lebanon,1,False,left,True,False
+for release of Dr. Hussam Abu Safiya and all healthcare workers from Israeli detention,1,False,left,True,False
+for police accountability and systemic reform,1,False,left,True,False
+for protection of immigrants's rights,1,False,left,True,False
+for justice for Derek Rosa,1,False,left,True,False
+for economic justice,1,False,left,True,False
+for Palestinian liberation and return,1,False,left,True,False
+"against the United States sending weapons to Israel, for Palestinian liberation",1,False,left,True,False
+in remembrance of Tawfic Abdeljabbar and all Palestinians killed by Israeli forces,1,False,left,True,False
+in celebration of Palestinian resistance,1,True,left,True,False
+for amplifying the voices of Black women and marginalized communities globally,1,False,left,True,False
+in solidarity with oppressed women in Palestine and Congo (DRC) and Sudan and Haiti and beyond,1,False,left,True,False
+for justice and liberation for all,1,False,left,True,False
+for amplifying intersectional voices,1,False,left,True,False
+against the New York Times newspapers' complicity in genocide in Gaza,1,False,left,True,False
+for Indigenous peoples' sovereignty,1,False,left,True,False
+against trans rights,1,False,left,True,False
+for justice for Donnell Rochester,1,False,left,True,False
+for reopening investigations into killings by Aurora Police Department officers,1,False,left,True,False
+against racist attacks on immigrants,1,False,left,True,False
+for divesting the University System of Georgia from partnerships and investments with companies complicit in Israelâs genocide in Gaza,1,False,left,True,False
+against the screening of a documentary supporting Palestine,1,False,left,True,False
+for single-payer healthcare system,1,False,left,True,False
+for state legislation that would ensure comprehensive universal healthcare for all New Yorkers,1,False,left,True,False
+for providing abuse-related documents and evidence to the Department of Justice,1,False,left,True,False
+for criminal justice reform to prevent violence,1,False,left,True,False
+against for-profit healthcare system,1,False,left,True,False
+for accountability and transparency in police actions,1,False,left,True,False
+against officers striking and tasing a suspect after being subdued,1,False,left,True,False
+against state attorney general Rob Bonta's complicity in police brutality,1,False,left,True,False
+for abolishing police and prisons,1,False,left,True,False
+for returning land to Indigenous peoples,1,False,left,True,False
+for restoring abortion rights,1,False,left,True,False
+for collective bargaining rights for Amazon and Starbuck's workers,1,False,left,True,False
+"for the passing of the New York for All Act, Dignity Not Detention Act, Access to Representation Act, and Clemency Justice Act",1,False,left,True,False
+for state legislation to protect immigrants' rights,1,False,left,True,False
+for a fair contract for Duluth municipal workers,1,False,left,True,False
+for terminating the Consulate General of Israel's lease at Wesleyan Tower office building,1,False,left,True,False
+against repression and discrimination towards pro-Palestinian students at City University of New York and in Gaza,1,False,left,True,False
+in remembrance of Palestinians killed by Israel's occupation and genocide,1,False,left,True,False
+for passage of city council resolution calling for permanent ceasefire in Gaza and restoration of humanitarian aid and release of all hostages and adherence to U.S. and international law,1,False,left,True,False
+for fair pay and paid time off for workers at Corner Coin-Op laundromat,1,False,left,True,False
+against deportations of migrants on flights from Gary/Chicago International Airport,1,False,left,True,False
+against deportations of migrants,1,False,left,True,False
+for housing and health care and union jobs for all,1,False,left,True,False
+in remembrance of Palestinians killed by Israel,1,False,left,True,False
+against attacks on labor unions,1,False,left,True,False
+against false promises of prolonged ceasefire,1,False,left,True,False
+"for celebrating MLK Day with community engagement, for standing up for social justice and civil rights, for peaceful activism and nonviolent change",1,False,left,True,False
+against construction of Cop City police training center,1,False,left,True,False
+in solidarity with municipal sanitation workers,1,False,left,True,False
+for environmental protections,1,False,left,True,False
+for diversity equity and inclusion,1,False,left,True,False
+for unrestricted access to Gaza by healthcare workers and journalists,1,False,left,True,False
+against union-busting,1,False,left,True,False
+against genocide and war,1,False,left,True,False
+for justice and inclusion and dignity for all trans people,1,False,left,True,False
+against attacks on immigrant workers,1,False,left,True,False
+in solidarity with children in Gaza,1,False,left,True,False
+against state gun control legislation,1,False,left,True,False
+for freeing Dr. Hussam Abu Safiya and other Palestinian healthcare workers detained by Israel,1,False,left,True,False
+for announcing that Penn associates and postdocs have reached majority support to unionize,1,False,left,True,False
+against dismissive and hostile language used by officers during the arrest,1,False,left,True,False
+against President Trump's executive orders to deport immigrants,1,True,left,True,False
+against ICE immigration sweeps in the Central Valley,1,False,left,True,False
+for equality for all,1,False,left,True,False
+for climate activism,1,False,left,True,False
+for housing justice,1,False,left,True,False
+for legalization for all undocumented immigrants,1,False,left,True,False
+for abolishing police,1,False,left,True,False
+for justice for Ahmaud Arbery,1,False,left,True,False
+against racial bias in the criminal justice system,1,False,left,True,False
+against cuts to union jobs and local bus service,1,False,left,True,False
+against Tufts University's complicity in genocide in Gaza,1,False,left,True,False
+for ending repression of pro-Palestinian voices on campus,1,False,left,True,False
+for freeing Ahmad Sa'adat and all Palestinian political prisoners held by Israel,1,False,left,True,False
+against the Palestinian Authority's collaboration with Israel,1,False,left,True,False
+for democracy and peace,1,False,left,True,False
+for workers right to unionize,1,False,left,True,False
+against the alleged retaliation of two unionized employyes by the Field Museum,1,False,left,True,False
+against Columbia University's repression of pro-Palestine student protest,1,False,left,True,False
+for reinstating students suspended for their participation in Columbia's Gaza Solidarity Encampment,1,False,left,True,False
+in solidarity with Palestinians following the ceasefire agreement in Gaza,1,False,left,True,False
+against Palestinian gencide,1,False,left,True,False
+for bold climate action,1,False,left,True,False
+against worker oppression,1,False,left,True,False
+against pro-Palestine protest,1,False,left,True,False
+for deporting undocumented immigrants,1,False,left,True,False
+in support of public sector labor unions,1,False,left,True,False
+against injustice,1,False,left,True,False
+"for Delta workers organizing for a union, against unfair scheduling practices, for job security and fair wages, against Delta's anti-union tactics, for workers' right to collective bargaining, against cuts to full-time schedules, for better health benefits for airline workers",1,False,left,True,False
+in support of the immigrant community at Boston University,1,False,left,True,False
+against Israel's attacks on healthcare workers and hospitals in Gaza,1,False,left,True,False
+for Black and Palestinian solidarity,1,False,left,True,False
+against presence of New York Police Department on New York University campus,1,False,left,True,False
+against genocide of Black children,1,False,left,True,False
+against Wells Fargo Bank's financing for Cop City police training center,1,False,left,True,False
+against militarization of police,1,False,left,True,False
+against complicity in the occupation of Palestine,1,False,left,True,False
+for warning the community about the consequences of Trumps agenda on immigrants and nonimmigrants,1,False,left,True,False
+against New York University's punishment of pro-Palestinian student protesters,1,False,left,True,False
+in support of public school worker threatened with firing for speaking out against genocide in Gaza,1,False,left,True,False
+in support of the immigrant community,1,False,left,True,False
+against punishment of pro-Palestinian student protesters,1,False,left,True,False
+against racial justice vigil,1,False,left,True,False
+for deporting illegal immigrants,1,False,left,True,False
+against appropriation of Palestinian cuisine and culture by Israel,1,False,left,True,False
+in celebration of victory by Palestinian resistance and release of Palestinian prisoners,1,True,left,True,False
+against the news media and film industry's misrepresentations and silencing of Palestinians,1,False,left,True,False
+for abortion access,1,False,left,True,False
+against the ending of labor and delivery services at Thedacare Medical Center in Waupaca,1,False,left,True,False
+for defunding the U.S. military and funding social services,1,False,left,True,False
+for Indigenous peoples' liberation,1,False,left,True,False
+against U.S. Rep. Chris Pappas' vote for national defense bill that would end medical coverage for trans youth of veterans and active service members,1,False,left,True,False
+against U.S. Rep. Chris Pappas' support for genocide in Gaza and imperialist wars in Syria and Yemen,1,False,left,True,False
+for healthcare and unemployment insurance for undocumented immigrants,1,False,left,True,False
+for a contract entailing better pay better benefits better job security and better protections for international workers,1,False,left,True,False
+for indicting U.S. Secretary of State Anthony Blinken for complicity in crimes against humanity in Gaza,1,False,left,True,False
+against delays in recognition of graduate student workers' union at University of Rochester,1,False,left,True,False
+against the establishment of possible ICE facility in Pflugerville,1,False,left,True,False
+against the Florida appeal of in-state tuition rights for undocumented immigrants,1,False,left,True,False
+for immigrant protections,1,False,left,True,False
+against New Yorkâs two-tier wage system for tipped workers,1,False,left,True,False
+for requiring employers to pay a full minimum wage with tips on top,1,False,left,True,False
+against a proposed City Council resolution that would allow local police officers to assist federal agents in deporting undocumented migrants,1,False,left,True,False
+for justice for school shooting victim Josselin Corea Escalante,1,False,left,True,False
+for transparency for Starbucks union employees,1,False,left,True,False
+against unfair labor practices for Starbucks employees,1,False,left,True,False
+against ICE raids on schools,1,False,left,True,False
+against ICE raids and detentions in Philadelphia,1,False,left,True,False
+against Donald Trump's agenda while being in office,1,True,left,True,False
+against cuts to social services,1,False,left,True,False
+against retaliation against teacher Alondra Garcia for providing information about legal services available to families potentially facing deportation,1,False,left,True,False
+for protection for transgender people,1,False,left,True,False
+against state legislation that would incentivize enforcing federal immigration laws and create criminal penalties for officials who adopt sanctuary policies and require their removal from office upon conviction,1,False,left,True,False
+against use of Hind Rajab to advance false claims of genocide in Gaza,1,False,left,True,False
+for a fair contract for graduate student workers at University of Iowa,1,False,left,True,False
+against Nu-Tech leaders accused retaliatory firings disability discrimination and threats related to unionization efforts,1,False,left,True,False
+against Sugar Land City Council resolutions silencing Muslim and pro-peace voices,1,False,left,True,False
+for state legislation that would bar state and local law enforcement from cooperating with ICE,1,False,left,True,False
+for more state support for legal services for migrants facing deportation,1,False,left,True,False
+against Dr. Kandi Deitemeyer's complicity in construction of new police training facility in Charlotte,1,False,left,True,False
+for immigrants knowing their rights,1,False,left,True,False
+against an Evening for Gaza fundraiser event,1,False,left,True,False
+against pro-immigrant rally,1,False,left,True,False
+for reproductive justice,1,False,left,True,False
+in solidarity with immigrants,1,False,left,True,False
+against ICE raids on local workers,1,False,left,True,False
+for collective bargaining rights and unionization for restaurant workers,1,False,left,True,False
+against union-busting at Rasika restaurant,1,False,left,True,False
+for higher pay for campus workers at University of North Carolina,1,False,left,True,False
+against immigration bill,1,False,left,True,False
+for humanitarian aid in Gaza,1,False,left,True,False
+for ending Israel's attacks on Lebanon and Gaza and the West Bank,1,False,left,True,False
+in remembrance of lives lost in Gaza,1,False,left,True,False
+for continued progress on gun safety in Maryland,1,False,left,True,False
+for gun safety,1,False,left,True,False
+against Governor Mike Braun's executive order ordering the state to fully cooperate with the federal government's immigration policies,1,False,left,True,False
+"for Florida to to stop attacks on courses and content that promote diversity, equity and inclusion",1,False,left,True,False
+for holding San Pablo police officer Jonah Norman accountable for hit-and-run incident,1,False,left,True,False
+against march for trans rights,1,False,left,True,False
+against College Republicans United event at Arizona State University featuring ICE,1,False,left,True,False
+for justice for Edward Sholtz and Robert Brooks,1,False,left,True,False
+for release of Dr. Hussam Abu Safiya and other Palestinian healthcare workers held by Israel,1,False,left,True,False
+against immigrant rights demonstration,1,False,left,True,False
+for permanent ceasefire in Palestine,1,False,left,True,False
+against the ICE's presence in Ithaca,1,False,left,True,False
+in remembrance of Hind Rajab and all victims of genocide in Gaza,1,False,left,True,False
+against Israel's attacks on the West Bank and Gaza and Lebanon,1,False,left,True,False
+against ICE raids in Inland Empire,1,False,left,True,False
+against Textron Aviation's complicity in genocide in Gaza and support for police and border surveillance in the U.S.,1,False,left,True,False
+in support of the transgender and LGBTQ+ community,1,False,left,True,False
+for community oversight and input on police behavior,1,False,left,True,False
+for the University of Northern Texas to protect its immigrants students,1,False,left,True,False
+for respecting the dignity and safety of individuals in police custody,1,False,left,True,False
+"against dividing school districts based on race and class, for maintaining educational unity, against segregating students by socioeconomic status, for equal access to resources across all schools, against dismantling an inclusive learning environment, for students' rights to voice concerns through peaceful protest, against political decisions that harm educational equity, for ensuring all Keller ISD students receive the same opportunities",1,False,left,True,False
+against deportations of immigrant students,1,False,left,True,False
+against President Trump's actions in office,1,True,left,True,False
+against President Trump's polices,1,True,left,True,False
+for maintaining gender-affirming health care for transgender youth at Childrens Hospital LA,1,False,left,True,False
+for policies at University of Vermont to protect immigrant and LGBTQ+ students and workers,1,False,left,True,False
+"against hate speech in schools, for accountability of school staff, against social media posts that target students, for a welcoming and inclusive school environment, against discrimination against Latino students, for protecting students from harmful rhetoric, against school employees promoting xenophobia, for cultural pride and respect, against burning national symbols as an act of hate",1,False,left,True,False
+"against unfair labor practices at Lamell Lumber, for fair wages and improved housing for immigrant workers, against employer retaliation for wage demands, for workplace dignity and safety, against threats of eviction tied to employment, for holding employers accountable to fair labor standards, against unilateral pay cuts imposed on workers, for collective bargaining rights, against workplace intimidation tactics",1,False,left,True,False
+"against ICE enforcement in the Santa Maria community, for the protection of immigrant families from deportation, against fear-driven immigration policies that target students and their families, for the right to peacefully protest without intimidation, against the criminalization of undocumented immigrants, for the ability of students to speak up about social justice issues, against policies that separate families and disrupt lives, for a humane approach to immigration enforcement, against the presence of ICE in schools and communities, for the right to education without fear of deportation,",1,False,left,True,False
+"against Trumpâs mass deportation plans, for immigrant rights and dignity, against forced family separations, for unity and solidarity among Black and Brown communities, against xenophobia and exclusionary policies, for Tulsa recognizing and embracing its immigrant population, against policies that create fear and instability",1,True,left,True,False
+"against mass deportations and fear-driven immigration policies, for immigrant rights and family unity, against the targeting of hardworking migrants and racial profiling, for dignity and respect for all individuals regardless of legal status, against ICE raids that instill fear in communities, for due process and legal protections for immigrants, against the criminalization of migration and asylum-seeking, for comprehensive immigration reform and pathways to citizenship, against policies that separate families and undermine community trust, for recognizing immigrantsâ contributions to the economy and society, against xenophobia and anti-immigrant rhetoric",1,False,left,True,False
+for unionization of workers at Amazon RDU1 facility,1,False,left,True,False
+against Gov. Mike Braun's executive order mandating law enforcement in Indiana cooperate with ICE agents,1,False,left,True,False
+for collective bargaining rights for Utah public sector unions,1,False,left,True,False
+against Zionist attacks on pro-Palestine protester,1,False,left,True,False
+against the economic and social impacts of increased federal immigration enforcement,1,False,left,True,False
+against the ICE's increased presence in Norristown,1,False,left,True,False
+against ICE raid and immigrant deportations,1,False,left,True,False
+for protections for immigrants in New Jersey,1,False,left,True,False
+"against mass deportations, for immigrant rights, against fear-based immigration policies, for protecting undocumented families, against ICE raids in communities",1,False,left,True,False
+for supporting the union's ongoing contract campaign,1,False,left,True,False
+for strengthening union voices and ensuring their labor is properly recognized,1,False,left,True,False
+"against Donald Trumpâs immigration policies, for protecting immigrant families from deportation, against the removal of limitations on ICE arrests in schools, churches, and hospitals, for ensuring children feel safe seeking medical help, against the targeting of nonviolent immigrants, for recognizing the struggles of migrants crossing the desert for a better life, against criminalizing undocumented entry without considering the circumstances, for keeping communities intact and families together",1,True,left,True,False
+against Donald Trumpâs immigration policies,1,True,left,True,False
+for protecting immigrant families from deportation,1,False,left,True,False
+"against ICE deportations separating Hispanic families, for immigrant rights and dignity, against policies that instill fear in immigrant communities, for keeping families together without the threat of deportation, against the criminalization of undocumented immigrants, for the right of students to stand in solidarity with their peers, against government actions that target Hispanic communities, for a humane and just immigration policy, against the silence and inaction that enable discrimination",1,False,left,True,False
+against immigration deportations,1,False,left,True,False
+against University of Minnesota's stated intention to comply with ICE orders,1,False,left,True,False
+"against House Bill 83, for immigrant rights and protections, against unjust deportation policies, for due process and fair treatment of undocumented migrants, against criminalizing immigrant communities, for humane and compassionate immigration laws, against fear-based immigration enforcement",1,False,left,True,False
+"against LB 155 which removes the duty to retreat before using deadly force near a vehicle, against the expansion of ""Stand Your Ground"" laws, against LB 687 which bans the state from rejecting contracts with businesses that discriminate against gun dealers or manufacturers, against LB 686 which prohibits police from keeping lists on gun and ammunition ownership, for maintaining common-sense gun safety laws, for protecting children and communities from gun violence, for ensuring law enforcement can track firearm purchases to prevent mass shootings, for the right to own guns with responsible regulations, for keeping schools, theaters, malls, and public spaces safe",1,False,left,True,False
+in solidarity with United States immigrants,1,False,left,True,False
+for workers rights,1,False,left,True,False
+for union rights,1,False,left,True,False
+for better working conditions for corrections officers,1,False,left,True,False
+against militarization of U.S.-Mexico border,1,False,left,True,False
+for continued interfaith advocacy and protection of immigrants,1,False,left,True,False
+for the Sonoma County Sheriff to not cooperate with ICE officials looking to arrest undocumented immigrants,1,False,left,True,False
+"against proposed medicaid cuts in the Trump administrationâs budget, against work requirements and benefit caps for medicaid recipients, for holding a town hall to discuss potential cuts with constituents, against increasing healthcare costs due to medicaid cuts, for recognizing medicaidâs role in supporting low-income and lower middle-class working individuals, against policies that would shift healthcare costs onto hospitals and private insurers, for maintaining healthcare access for workers in service industries and small businesses",1,False,left,True,False
+"against House Bill 176, against discontinuing the WWAMI medical education program, against disrupting Idahoâs physician workforce pipeline, against worsening Idahoâs physician-to-population ratio, against dismantling decades of medical education infrastructure, against hastily building a new medical program without sufficient planning, for preserving and strengthening Idahoâs WWAMI program, for maintaining clinical rotations and clerkships across Idaho, for expanding medical education opportunities within Idaho while keeping existing partnerships, for ensuring continued access to quality healthcare for Idaho residents",1,False,left,True,False
+for LGBTQ+,1,False,left,True,False
+"against federal layoffs at Haskell Indian Nations University, against the hiring freeze preventing faculty replacements, against the Bureau of Indian Educationâs restrictions on university leadership, against broken promises of job security for recently hired faculty, against barriers to volunteer support due to federal background check requirements, for federal recognition of treaty obligations to Indigenous education, for reemployment of terminated staff, for community-driven support solutions, for state and congressional representatives to intervene, for continued funding of Haskell Light and local food banks to aid affected employees and students",1,False,left,True,False
+against deportations of undocumented migrants,1,False,left,True,False
+"against Elon Muskâs influence in U.S. government, for transparency in federal leadership, against the elimination of USAID, for humanitarian aid and global credibility, against the misuse of sensitive government data, for congressional oversight on government agencies, against mass layoffs and federal worker buyouts, for protecting jobs and economic stability, against corporate control of government operations",1,False,left,True,False
+support for immigrant communities,1,False,left,True,False
+for Police Chief Ceaser Moore to give students answers,1,False,left,True,False
+for accountability for UH police,1,False,left,True,False
+against threats to democracy and constitutional protections,1,False,left,True,False
+for protecting federal workers and civil servants,1,False,left,True,False
+"against ICE enforcement at hospitals, schools, and places of worship, for protecting immigrant access to essential services, against fear-driven policies targeting immigrant communities, for maintaining public safety and trust in institutions, against Trumpâs rollback of sensitive location protections, for the passage of the Protecting Sensitive Locations Act, against intimidation that deters parents from sending children to school, for religious liberty and the sanctity of faith-based spaces",1,True,left,True,False
+in solidarity with immigrants and undocumented people,1,False,left,True,False
+"against the planned trash truck refueling station, for preserving neighborhood quality of life, against increased traffic and pollution in residential areas, for homes and green spaces over industrial expansion, against FCC Environmentalâs facility in West Seventh, for alternative locations for waste management operations, against zoning decisions made without community input, for a thorough zoning study and public hearing, against St. Paulâs fast-tracking of the facility",1,False,left,True,False
+"against ICE presence on campus, for canceling ICE recruitment events, against university complicity with immigration enforcement, for protecting immigrant students and workers, against the university hosting DHS and ICE-affiliated agencies, for a formal apology from the administration",1,False,left,True,False
+against Israeli prime minister Benjamin Netanyahu's leadership of genocide in Gaza,1,False,left,True,False
+against freeze on funding for U.S. Environmental Protection Agency,1,False,left,True,False
+"against Donald Trumpâs immigration policies, against Ron DeSantis' immigration policies, for supporting immigrant families, against ICE raids instilling fear in communities, for recognizing immigrants' contributions to local businesses, against labeling immigrants as criminals, for allowing immigrant families to live without fear",1,True,left,True,False
+"against Trumpâs immigration policies, for standing up for immigrant families, against mass deportations, for keeping families together, against the fear and uncertainty facing undocumented students, for students using their voices to demand justice, against the dehumanization of immigrants, for recognizing the humanity of all people, against school staff attempting to suppress student activism, for the right to protest peacefully",1,True,left,True,False
+against police presence at student government meetings as an intimidation tactic,1,False,left,True,False
+against proposed new Quality of Life division for New York Police Department,1,False,left,True,False
+in solidarity with the seven individuals charged with misdemeanors and felonies during a Gaza solidarity encampment,1,False,left,True,False
+against anti-Black racism and police brutality,1,False,left,True,False
+against the police shooting of Alejandro Campos Rios,1,False,left,True,False
+against the genocide in Gaza,1,False,left,True,False
+for the abolition of ICE,1,False,left,True,False
+for police transparency and accountability,1,False,left,True,False
+against the police shooting and killing of Titusville resident Tri-Marea Charles,1,False,left,True,False
+for protection of immigrant rights,1,False,left,True,False
+against the allowance of ICE on University of Texas- Austin campus,1,False,left,True,False
+for protecting the LGBTQ-plus community,1,False,left,True,False
+against dozens of city union worker layoffs,1,False,left,True,False
+against deportations of immigrant students from University of Wisconsin Milwaukee,1,False,left,True,False
+in support of immigrants,1,False,left,True,False
+"for demanding justice, safety, and the right for all immigrants to live free from fear",1,False,left,True,False
+against ICE's presence at University of Colorado Boulder career fair,1,False,left,True,False
+"for discussing the history and impact of african-american protest music, for analyzing the symbolism in kendrick lamarâs super bowl performance, against performative activism that does not result in tangible change, against the nflâs removal of the âend racismâ message from the field, for fostering solidarity among marginalized communities in response to recent policies, for creating open spaces where students can discuss social justice without fear, for breaking down power dynamics between professors and students in discussions on race and activism",1,False,left,True,False
+against U.S. invovlement in Gaza,1,False,left,True,False
+"for engaging students in the BYUSA election process, for making informed voting decisions, for candidates fostering genuine connections with students, for showcasing student talent and campus involvement, for promoting service initiatives within the election campaign, for creating inclusive and welcoming campaign events, for encouraging student participation in campus leadership, for providing interactive and entertaining campaign experiences, for emphasizing the values of BYUSA through community engagement, for fostering a sense of fun and friendship within student government",1,False,left,True,False
+against Israel's continuing attacks on Palestine and Lebanon,1,False,left,True,False
+against ethnic cleansing and genocide in Gaza,1,False,left,True,False
+against Israel's detention of Dr. Hussam Abu Safiya and other healthcare workers from Gaza,1,False,left,True,False
+"against federal worker buyouts, for job security in public service, against mass terminations of government employees, for protecting labor rights in federal agencies, against Trump's executive order on worker dismissals, for AFGE's fight to protect government jobs, against dismantling of federal workforce, for solidarity among unions defending public employees, against cuts to essential government services, for fair treatment of probationary federal workers",1,True,left,True,False
+against U.S. immigration policies,1,False,left,True,False
+for justice for Michael Barrera and all victims of police violence,1,False,left,True,False
+against ethnic cleansing in Palestine,1,False,left,True,False
+against ICE raids and immigrant deportations against attacks on trans people,1,False,left,True,False
+against the deportation of immigrants,1,False,left,True,False
+for undergraduate workers' rights,1,False,left,True,False
+in remembrance of Hind Rajab and all Palestinian children killed by Israel in Gaza,1,False,left,True,False
+against police harassment of street vendors and homeless New Yorkers,1,False,left,True,False
+for defunding police and increasing funding for social services,1,False,left,True,False
+for voting rights,1,False,left,True,False
+"against unfair labor conditions at Kaiser Permanente, for increased staffing to improve patient care, against excessive appointment wait times for mental health services, for equitable wages and benefits for Southern California mental health workers, against Kaiser's alleged understaffing that strains workers and patients, for equal retirement benefits for mental health workers, against Kaiser's refusal to negotiate until March, for fair labor practices and contract negotiations",1,False,left,True,False
+for criminal justice reform,1,False,left,True,False
+for state legislation to help protect immigrants against deportations,1,False,left,True,False
+for justice for Timothy Glaze,1,False,left,True,False
+for racial justice and equity in public education,1,False,left,True,False
+for gender-affirming health care for transgender children,1,False,left,True,False
+against ICE deportations and its effects on students,1,False,left,True,False
+for safety for immigrant students and their families,1,False,left,True,False
+against The New York Times newspaper's role in spreading misinformation and enabling genocide in Gaza,1,False,left,True,False
+against anti-immigrant policies,1,False,left,True,False
+for investigating anti-Palestinian bias in New York Times coverage,1,False,left,True,False
+against President Trump's restrictions on diversity equity and inclusion policies,1,True,left,True,False
+against state senator Jessica de la Cruz's support for President Trump's immigrant deportations,1,False,left,True,False
+against unfair labor practices,1,False,left,True,False
+for assistance for immigrant families living in homeless shelter,1,False,left,True,False
+"against Israel's attacks in the West Bank, against genocide in Gaza",1,False,left,True,False
+for Palestinian liberation~,1,False,left,True,False
+in support of LGBTQ+ New Yorkers,1,False,left,True,False
+against Israel's violations of ceasefire deal,1,False,left,True,False
+against ICE raids and mass deportations,1,False,left,True,False
+against University of North Carolina Chapel Hill chancellor Lee Roberts' stated intention to cooperate with ICE in detention and deportation of undocumented migrants on campus,1,False,left,True,False
+for better working conditions for corrections officers at Sing Sing Correctional Facility and all others in NY,1,False,left,True,False
+"against changes to CSUâs diversity, equity, inclusion, and accessibility policies",1,False,left,True,False
+for union jobs,1,False,left,True,False
+against President Trump's plan to take over Gaza while relocating residents to neighboring countries,1,True,left,True,False
+for the protection of social services,1,False,left,True,False
+against complicity in genocide in Gaza,1,False,left,True,False
+against Arizona Senate Bill 1164 mandating that local law enforcement agencies enter into legal agreements codifying cooperation with ICE,1,False,left,True,False
+against the mass firing of skilled federal workers,1,False,left,True,False
+for better working conditions for corrections officers at Cayuga Correctional Facility and others in NY,1,False,left,True,False
+"for 2 miles of protection around schools, churches, parks and hospitals prohibiting ICE from detaining anyone in that area",1,False,left,True,False
+against the recent mass layoffs of federal workers,1,False,left,True,False
+against federal immigration deportment policies,1,False,left,True,False
+for amnesty for all eight students who were involved with the Palestine solidarity encampment at Bowdoin College,1,False,left,True,False
+against President Trump's attacks on immigrants,1,True,left,True,False
+for a larger meeting space for members of the Black Student Union,1,False,left,True,False
+for increased wages and shift availability for fast food workers,1,False,left,True,False
+against suspension of Students for Justice in Palestine at UCLA organization,1,False,left,True,False
+against a New York real estate event promoting the sale of Palestinian property on settlements in the occupied West Bank,1,False,left,True,False
+"against Idaho State University's decision to eliminate several diversity, equity and inclusion programs",1,False,left,True,False
+"for fair pay for graduate student workers, for fair unionization process",1,False,left,True,False
+against President Trump's attempts to defund public services,1,True,left,True,False
+for funding for services such as education and healthcare,1,False,left,True,False
+"for fair contracts for federal workers unions, including postal workers and veterans affairs workers",1,False,left,True,False
+for supporting immigrant students and their families,1,False,left,True,False
+"for higher wages for university of iowa health care workers, for better working conditions, including improvements to older and unsafe units, for increased respect and appreciation for staff who feel undervalued, against hiring temporary travel nurses at high costs instead of investing in permanent staff, for meaningful wage increases, citing a long period without substantial raises, for better physical and mental working conditions for healthcare workers, for university and regents representatives to acknowledge and act on workers' concerns, for a contract that improves conditions for workers, patients, and families",1,False,left,True,False
+for higher pay for public-sector workers in Alaska,1,False,left,True,False
+"against VA workforce cuts, for protecting veterans' healthcare access, against understaffing at VA medical centers, for job security for civil service workers, against layoffs impacting patient care, for prioritizing veterans' well-being over cost-saving measures, against rushed efficiency plans that hurt healthcare, for transparency in VA budget allocation, against delays in veterans' medical treatment, for congressional oversight of government efficiency initiatives, against corporate involvement in public healthcare decisions, for maintaining timely access to primary care physicians, against bureaucratic chaos affecting veterans' services, for fair labor practices in the federal workforce, against unjust terminations of VA employees, for accountability from the Department of Government Efficiency, against privatization of VA healthcare",1,False,left,True,False
+"against local police acting as federal immigration agents, for public safety policies that build trust with immigrant communities, against policies that lead to fear and decreased crime reporting, for maintaining clear distinctions between civil and criminal law enforcement roles, against using county resources for federal immigration enforcement, for ensuring all residents feel safe accessing community services, against measures that discourage school attendance and social participation, for passing state laws that protect immigrant communities, against political stunts that harm public confidence in law enforcement, for policies that respect and honor immigrant contributions",1,False,left,True,False
+in solidarity with missing and murdered Indigenous relatives and women,1,False,left,True,False
+against the potential closure of Bay County's Social Security Office,1,False,left,True,False
+for Tulane University to become a sanctuary campus for immigrant students,1,False,left,True,False
+against President Trumpâs ethnic cleansing plans for Gaza,1,True,left,True,False
+for stricter gun control legislation,1,False,left,True,False
+for more state funding for homeless shelters and rehousing services,1,False,left,True,False
+against suspensions and evictions of University of Chicago students who participated in Palestine solidarity protest,1,False,left,True,False
+against occupation and ethnic cleansing in Palestine,1,False,left,True,False
+for urgent climate action,1,False,left,True,False
+for holding fossil fuel companies accountable for climate change,1,False,left,True,False
+for action by Mayor Eric Adams and the New York City Council to protect immigrant New Yorkers from Donald Trump's planned mass deportations and family separations,1,False,left,True,False
+in solidarity with Gaza,1,False,left,True,False
+for reparations to Palestinians,1,False,left,True,False
+against the moving of Milwaukee U.S. Immigrations and Customs facility to a larger building,1,False,left,True,False
+against cuts to state healthcare budget,1,False,left,True,False
+against closures of hospitals and healthcare clinics in Vermont,1,False,left,True,False
+against potential deportations of immigrants in Saint Louis,1,False,left,True,False
+or democracy,1,False,left,True,False
+for access to resources for immigrants,1,False,left,True,False
+against proposed repeal of city legislation establishing citizens police review board,1,False,left,True,False
+for community oversight of police,1,False,left,True,False
+in support of activist Thairie Ritchie who self-immolated at the Black Lives Matter mural in Santa Cruz on Jan. 20,1,False,left,True,False
+in support of climate action,1,False,left,True,False
+for protections for public services,1,False,left,True,False
+for LGBTQ,1,False,left,True,False
+for Federal workers,1,False,left,True,False
+against mass deportation of immigrants,1,False,left,True,False
+against layoffs of U.S. Forest Service and National Park Service employees,1,False,left,True,False
+against layoffs of of CDC workers,1,False,left,True,False
+against anti-immigrant bigotry,1,False,left,True,False
+against President Donald Trumpâs proposal to resettle Palestinians in Gaza,1,False,left,True,False
+against healthcare cuts,1,False,left,True,False
+"against mass layoffs of federal employees, for job security in public service, against Elon Musk's role in government affairs, for congressional accountability over executive actions, against cuts to USAID and foreign aid programs, for transparency in government restructuring, against undermining constitutional democracy, for the protection of democratic institutions, against forced buyouts and arbitrary dismissals of civil servants, for responsible governance that upholds the rule of law, against Trump and Musk consolidating power, for ethical oversight of federal decision-making, against using DEI as a scapegoat for unrelated tragedies",1,True,left,True,False
+"against the HALT Actâs limits on segregated confinement, for reversing prison reforms that allegedly endanger correction officers, for addressing staffing shortages in prisons, against mandatory 24-hour work shifts for correction officers, for Governor Hochul using emergency powers to suspend HALT temporarily, for improving safety conditions for both officers and incarcerated individuals, against poor working conditions and dangerous guard-to-inmate ratios, for better resources and staffing in state prisons, against violent assaults on correction officers, against inadequate medical care and commissary access for incarcerated individuals during the strike",1,False,left,True,False
+"for justice and accountability for the nurse attacked at Palms West Hospital, for increased safety measures and protections for healthcare workers, for community solidarity and support for the victim and her family, for greater awareness of violence against nurses and hospital staff, against workplace violence in healthcare settings, against inadequate security measures for medical personnel",1,False,left,True,False
+for justice for a murdered trans man,1,False,left,True,False
+in remembrance of Palestinians killed in genocide in Gaza,1,False,left,True,False
+in support of park worker layoffs,1,False,left,True,False
+against park worker layoffs,1,False,left,True,False
+against Mayor Daniel Lurie's motion to oust San Francisco Police Commissioner Max Carter-Oberstone,1,False,left,True,False
+for police reform,1,False,left,True,False
+against U.S. president Donald Trump and U.S. vice president J.D. Vance,1,False,left,True,False
+against President Trump's effort to suspend the US's refugee resettlement program,1,True,left,True,False
+for environmental sustanitability,1,False,left,True,False
+for Trans rights,1,False,left,True,False
+for Healthcare rights,1,False,left,True,False
+against the Trump Administration's cuts to the National Park Service,1,False,left,True,False
+"against the firing of at least 1,000 National Park Service employees",1,False,left,True,False
+in support of Gov. Janet Mills following her response to President Trump's executive order barring transgender athletes from competing in girls' and women's sports,1,False,left,True,False
+against speakers at a University of Maryland event about political negotiations in the Middle East in favor of Israel's military offensive in Gaza,1,False,left,True,False
+for The Green New Deal for Colorado Schools and climate-related bills,1,False,left,True,False
+against dismantling the post service,1,False,left,True,False
+against possible plans by the Trump adminstration to privatize postal service,1,False,left,True,False
+in support of the Latino and immigrant community,1,False,left,True,False
+"in protest of ICE coming to California State University, Chico's career fair",1,False,left,True,False
+in celebration of the restoral of LGBTQ+ housing at Florida State University,1,False,left,True,False
+against Donald Trump's recent firings of federal employees at the Department of Health and Human Services,1,True,left,True,False
+for public services,1,False,left,True,False
+for saving democracy from tyranny and Oligarchy,1,False,left,True,False
+in celebration of healthcare workers in Gaza,1,False,left,True,False
+against immigration raids,1,False,left,True,False
+for Gov. Kathy Hochul to remove Mayor Eric Adams from office,1,False,left,True,False
+"against ICE presence in immigrant communities, for protecting immigrant rights and safety, against immigration raids that create fear and division, for standing in solidarity with immigrant communities, against federal immigration enforcement disrupting local communities, for students using their voices to oppose deportations, against policies that target and intimidate immigrant families, for ensuring all residents feel safe regardless of immigration status, against actions that create fear in schools and neighborhoods, for a community that welcomes and supports immigrants",1,False,left,True,False
+for restroring abortion rights in Kentucky,1,False,left,True,False
+"for fair wages for concierges, porters, and residential workers, arguing they are paid poverty wages despite maintaining luxury buildings, for affordable health benefits for building workers, citing unaffordable current plans, for allowing workers to earn enough to live in the city they serve, as jersey city has the second-highest rental prices in the u.s., against landlords charging high rent and excessive fees while underpaying essential workers, against the 380 housing code violations found at journal squared, including life safety threats, for stronger tenant protections against unfair rental fees and poor housing conditions, for greater accountability from luxury landlords like kre group to improve working and living conditions, for city and state officials supporting workers' rights, wages, and tenant protections",1,False,left,True,False
+for women's reproductive rights,1,False,left,True,False
+"against ICE raids that create fear in immigrant communities, for student activism in support of immigrant rights, against policies that target and disrupt immigrant families, for local communities standing together in solidarity, against federal enforcement actions that instill fear in schools and neighborhoods, for policies that ensure all students feel safe in their schools, against deportations that separate families, for advocating humane immigration policies",1,False,left,True,False
+against alleged retaliation termination after the employees tried to unionize with SEIU,1,False,left,True,False
+for foreign workers,1,False,left,True,False
+against layoffs at U.S. Environmental Protection Agency's Midwest office,1,False,left,True,False
+against proposed cuts to Medicaid and social services,1,False,left,True,False
+against the Trump Administration's attempts to dismantle climate and health protections,1,False,left,True,False
+for protecting democracy and fair elections,1,False,left,True,False
+against pro-immigrants march,1,False,left,True,False
+for justice for OpenAI engineer Suchir Balaji who died,1,False,left,True,False
+"against Nick LaLotaâs refusal to hold an in-person town hall, against LaLotaâs dismissal of constituent concerns as scripted, against federal cuts to Long Island healthcare and education, against freezing of funds to the Northport VA and Long Island research institutions, against cuts to the Department of Education affecting disadvantaged and disabled children, for LaLota taking action to protect Medicaid for 715,000 people in the district, for ensuring funding for schools, hospitals, and public services, for political accountability and representation of constituent needs",1,False,left,True,False
+"against U.S. involvement in Israelâs actions in Gaza, for Palestinian self-determination, against Trumpâs plan to take over Gaza, for honoring the ceasefire agreement, against leveraging foreign aid to pressure Jordan and Egypt, for stopping the ethnic cleansing of Palestinians, against continued attacks on displaced Palestinians, for recognizing Gazaâs history and the right of Palestinians to remain on their land, against destruction of Palestinian infrastructure and homes",1,True,left,True,False
+for fair contract for Iowa postal workers,1,False,left,True,False
+in support of Palestinian sovereignty,1,False,left,True,False
+against President Trump's position to take control of Gaza,1,True,left,True,False
+"against federal funding freezes and agency overhauls impacting agencies like the Department of Education, the Environmental Protection Agency, the Department of Veterans Affairs, and the National Institutes of Health",1,False,left,True,False
+against ethnic cleansing in Gaza,1,False,left,True,False
+for allowing transgender people to serve in the military,1,False,left,True,False
+for ending bathroom restrictions on transgender people,1,False,left,True,False
+for amnesty for queer immigrants,1,False,left,True,False
+against immigrants,1,False,left,True,False
+against President Trump's immigrant deportations and family separations,1,True,left,True,False
