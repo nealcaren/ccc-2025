@@ -22,8 +22,10 @@ def main():
     
     # Process each tag
     for tag_col in tag_columns:
-        # Convert tag_gaza to Gaza, and tag_musk to Musk/DOGE
+        # Convert tag names to readable format
         tag_name = tag_col[4:].replace('_', ' ').title().replace('Lgbt', 'LGBT').replace('Lgbtplus', 'LGBT+')
+        
+        # Update tag names to match new naming conventions
         if tag_name == 'Musk':
             tag_name = 'Musk/DOGE'
         
