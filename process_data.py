@@ -41,11 +41,15 @@ def main():
 
     # 3. Generate summary statistics
     print("Generating summary statistics...")
+    
+    # Calculate total size, using 11 as default where size is unknown
+    df['size_for_total'] = df['size_mean'].fillna(11)
+    total_size = int(df['size_for_total'].sum())
+    
     summary_stats = {
         'total_events': len(df),
         'unique_locations': df['locality'].nunique(),
-        'unique_states': df['state'].nunique(),
-        'event_types': df['event_type'].value_counts().head(5).to_dict(),
+        'total_size': total_size,
         'top_targets': df['targets'].value_counts().head(5).to_dict() if 'targets' in df.columns else {},
         'top_claims': {k[:50] + '...' if len(k) > 50 else k: v 
                       for k, v in df['claims_summary'].value_counts().head(5).to_dict().items()},

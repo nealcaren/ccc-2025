@@ -37,14 +37,8 @@ async function loadSummaryStats() {
             </div>
             <div class="col-md-3">
                 <div class="card stats-card">
-                    <div class="stats-number">${formatNumber(stats.unique_states)}</div>
-                    <div>States/Territories</div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="stats-number">${Object.keys(stats.event_types).length}</div>
-                    <div>Event Types</div>
+                    <div class="stats-number">${formatNumber(stats.total_size)}</div>
+                    <div>Total Participants</div>
                 </div>
             </div>
         `;
