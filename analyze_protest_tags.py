@@ -68,10 +68,11 @@ def main():
                 axis=1
             )
 
-    # Calculate tag statistics
+    # Calculate tag statistics - count events, not claims
     tag_stats = {}
     for tag in tag_categories.keys():
         tag_col = f'tag_{tag.lower().replace("+", "plus").replace(" ", "_")}'
+        # Count unique events with this tag
         count = df[tag_col].sum()
         percentage = (count / len(df)) * 100
         tag_stats[tag] = {'count': int(count), 'percentage': float(percentage)}

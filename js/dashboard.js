@@ -499,7 +499,7 @@ async function loadProtestTagsChart() {
             data: {
                 labels: tagsData.tags,
                 datasets: [{
-                    label: 'Percentage of Protests',
+                    label: 'Percentage of Events',
                     data: tagsData.percentages,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
@@ -527,7 +527,7 @@ async function loadProtestTagsChart() {
                                 const label = context.dataset.label || '';
                                 const value = context.raw.toFixed(2) + '%';
                                 const count = tagsData.counts[context.dataIndex];
-                                return `${label}: ${value} (${count} protests)`;
+                                return `${label}: ${value} (${count} events)`;
                             }
                         }
                     }
@@ -537,7 +537,7 @@ async function loadProtestTagsChart() {
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Percentage of Protests'
+                            text: 'Percentage of Events'
                         },
                         ticks: {
                             callback: function(value) {

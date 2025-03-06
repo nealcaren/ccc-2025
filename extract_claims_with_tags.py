@@ -65,6 +65,13 @@ def main():
         if tag in claims_df.columns:
             tag_count = claims_df[tag].sum()
             print(f"{tag}: {int(tag_count)} claims")
+    
+    # Also count unique events by tag from the original dataframe
+    print("\nSummary of events by tag:")
+    for tag_col in tag_columns:
+        tag_name = tag_col[4:].replace('_', ' ').title().replace('Lgbt', 'LGBT').replace('Lgbtplus', 'LGBT+')
+        event_count = df[tag_col].sum()
+        print(f"{tag_name}: {int(event_count)} events ({event_count/len(df)*100:.2f}%)")
 
 if __name__ == "__main__":
     main()
