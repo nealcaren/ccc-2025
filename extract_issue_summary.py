@@ -87,6 +87,20 @@ def main():
     issues_df.to_csv(output_file, index=False)
     print(f"Saved protest issues summary to {output_file}")
     
+    # Also save as JSON for the dashboard
+    json_output = {
+        'tags': issues_df['Issue'].tolist(),
+        'counts': issues_df['Event Count'].tolist(),
+        'percentages': issues_df['Event Percentage'].tolist(),
+        'participantCounts': issues_df['Participant Count'].tolist(),
+        'percentagesByParticipants': issues_df['Participant Percentage'].tolist()
+    }
+    
+    json_output_file = 'data/protest_issues_summary.json'
+    with open(json_output_file, 'w') as f:
+        json.dump(json_output, f)
+    print(f"Saved protest issues summary JSON to {json_output_file}")
+    
     # Print summary
     print("\nProtest Issues Summary:")
     for _, row in issues_df.iterrows():
