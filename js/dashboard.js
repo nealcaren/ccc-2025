@@ -53,7 +53,9 @@ async function loadSummaryStats() {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="protestIssuesChart" style="height: 300px;"></div>
+                                <div class="chart-container" style="height: 400px;">
+                                    <canvas id="protestIssuesChart"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -541,9 +543,15 @@ async function loadProtestIssuesChart() {
         
         // Create chart
         const ctx = document.getElementById('protestIssuesChart');
-        if (!ctx) return; // Exit if element doesn't exist yet
+        if (!ctx) {
+            console.error('protestIssuesChart element not found');
+            return; // Exit if element doesn't exist yet
+        }
         
-        new Chart(ctx, {
+        // Get the canvas context for 2d drawing
+        const context = ctx.getContext('2d');
+        
+        new Chart(context, {
             type: 'bar',
             data: {
                 labels: tagsData.tags,
