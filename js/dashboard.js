@@ -417,6 +417,81 @@ async function loadTacticsChart() {
     }
 }
 
+// Load and display tactics analysis chart
+async function loadTacticsAnalysisChart() {
+    try {
+        const tacticsData = await fetchData('data/tactics_analysis.json');
+        
+        // Create chart
+        const ctx = document.getElementById('tacticsAnalysisChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: tacticsData.labels,
+                datasets: [{
+                    label: 'Percentage of Events',
+                    data: tacticsData.percentages,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.raw.toFixed(2) + '%';
+                                const count = tacticsData.counts[context.dataIndex];
+                                return `${label}: ${value} (${count} events)`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage of Events'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Tactic'
+                        }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error loading tactics analysis chart:', error);
+    }
+}
+
 // Initialize the dashboard
 async function initDashboard() {
     try {
@@ -426,6 +501,7 @@ async function initDashboard() {
             loadEventTypesChart(),
             loadStatesChart(),
             loadTacticsChart(),
+            loadTacticsAnalysisChart(),
             loadEventsTable()
         ]);
     } catch (error) {
