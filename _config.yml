@@ -1,0 +1,8 @@
+# GitHub Pages configuration
+title: Crowd Counting Consortium 2025
+description: Analysis of protest data
+baseurl: "/ccc-2025"
+url: "https://nealcaren.github.io"
+
+# Build settings
+markdown: kramdown

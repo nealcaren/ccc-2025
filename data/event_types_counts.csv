@@ -1,0 +1,35 @@
+event_type,count
+demonstration,2503
+rally,733
+rally; march,595
+protest,251
+march,179
+counter-protest,68
+rally; demonstration,25
+protest; march,22
+demonstration; march,17
+march; rally,17
+Unknown,15
+march; demonstration,14
+civil disobedience,13
+march; protest,11
+demonstration; rally,6
+rally; civil disobedience,2
+demonstration; rally; march,2
+protest; demonstration,2
+protest; rally,2
+counter protest,1
+caravan,1
+rally; protest,1
+vigil; march,1
+demonstration; rally; protest,1
+demonrstation; march,1
+demontration,1
+March,1
+rally; march; demonstration,1
+rally; march; civil disobedience,1
+counter-protester,1
+demonstration; protest,1
+vigil,1
+demonstration; civil disobedience,1
+Rally,1
