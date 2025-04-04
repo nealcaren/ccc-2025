@@ -26,7 +26,6 @@ def main():
     def is_left_leaning(claim_text):
         if not isinstance(claim_text, str):
             return False
-        
         claim_lower = claim_text.lower()
         
         # Check for anti-abortion or anti-LGBT claims which should not be considered left-leaning
@@ -45,32 +44,45 @@ def main():
     def targets_trump_or_musk(target_text):
         if not isinstance(target_text, str):
             return False
-        
         target_lower = target_text.lower()
         return 'trump' in target_lower or 'musk' in target_lower
 
-    # Filter for left-leaning claims or targeting Trump/Musk
-    print("Filtering for left-leaning protests...")
+    # Filter for left-leaning claims based primarily on valence field
+    print("Filtering for left-leaning protests using valence field as override...")
+    
+    # Create a new column that determines if an event is left-leaning
+    df['is_left'] = df.apply(
+        lambda row: True if row.get('valence') == 1 else  # If valence is 1, it's left-leaning
+                   False if row.get('valence') == 2 else  # If valence is 2, it's not left-leaning
+                   # If valence is not 1 or 2, use the original criteria
+                   (is_left_leaning(row.get('claims_summary', '')) or 
+                   targets_trump_or_musk(row.get('targets', ''))),
+        axis=1
+    )
+    
+    # Filter using the new column and date range
     left_protests = df[
-        (df['claims_summary'].apply(is_left_leaning) | 
-         df['targets'].apply(targets_trump_or_musk)) &
-        (df['date'] >= '2025-01-15') &
-        (df['date'] <= '2025-02-28')
+        df['is_left'] & 
+        (df['date'] >= '2025-01-20') & 
+        (df['date'] <= '2025-03-31')
     ]
     
-    print(f"Found {len(left_protests)} left-leaning protests out of {len(df)} total")
+    # Drop the temporary column
+    left_protests = left_protests.drop(columns=['is_left'])
     
+    print(f"Found {len(left_protests)} left-leaning protests out of {len(df)} total")
+
     # Save filtered dataset
     output_file = 'ccc-phase3-left.csv'
     left_protests.to_csv(output_file, index=False)
     print(f"Saved filtered dataset to {output_file}")
-    
+
     # Print some statistics
     print("\nTop 10 claims in filtered dataset:")
     claims_counts = left_protests['claims_summary'].value_counts().head(10)
     for i, (claim, count) in enumerate(claims_counts.items()):
         print(f"{i+1}. {claim}: {count}")
-    
+
     print("\nTop 10 targets in filtered dataset:")
     targets_counts = left_protests['targets'].value_counts().head(10)
     for i, (target, count) in enumerate(targets_counts.items()):
